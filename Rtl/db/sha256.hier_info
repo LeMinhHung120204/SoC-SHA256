@@ -1,4 +1,200 @@
 |Compressor
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+A[8] => A[8].IN1
+A[9] => A[9].IN1
+A[10] => A[10].IN1
+A[11] => A[11].IN1
+A[12] => A[12].IN1
+A[13] => A[13].IN1
+A[14] => A[14].IN1
+A[15] => A[15].IN1
+A[16] => A[16].IN1
+A[17] => A[17].IN1
+A[18] => A[18].IN1
+A[19] => A[19].IN1
+A[20] => A[20].IN1
+A[21] => A[21].IN1
+A[22] => A[22].IN1
+A[23] => A[23].IN1
+A[24] => A[24].IN1
+A[25] => A[25].IN1
+A[26] => A[26].IN1
+A[27] => A[27].IN1
+A[28] => A[28].IN1
+A[29] => A[29].IN1
+A[30] => A[30].IN1
+A[31] => A[31].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+B[8] => B[8].IN1
+B[9] => B[9].IN1
+B[10] => B[10].IN1
+B[11] => B[11].IN1
+B[12] => B[12].IN1
+B[13] => B[13].IN1
+B[14] => B[14].IN1
+B[15] => B[15].IN1
+B[16] => B[16].IN1
+B[17] => B[17].IN1
+B[18] => B[18].IN1
+B[19] => B[19].IN1
+B[20] => B[20].IN1
+B[21] => B[21].IN1
+B[22] => B[22].IN1
+B[23] => B[23].IN1
+B[24] => B[24].IN1
+B[25] => B[25].IN1
+B[26] => B[26].IN1
+B[27] => B[27].IN1
+B[28] => B[28].IN1
+B[29] => B[29].IN1
+B[30] => B[30].IN1
+B[31] => B[31].IN1
+C[0] => C[0].IN1
+C[1] => C[1].IN1
+C[2] => C[2].IN1
+C[3] => C[3].IN1
+C[4] => C[4].IN1
+C[5] => C[5].IN1
+C[6] => C[6].IN1
+C[7] => C[7].IN1
+C[8] => C[8].IN1
+C[9] => C[9].IN1
+C[10] => C[10].IN1
+C[11] => C[11].IN1
+C[12] => C[12].IN1
+C[13] => C[13].IN1
+C[14] => C[14].IN1
+C[15] => C[15].IN1
+C[16] => C[16].IN1
+C[17] => C[17].IN1
+C[18] => C[18].IN1
+C[19] => C[19].IN1
+C[20] => C[20].IN1
+C[21] => C[21].IN1
+C[22] => C[22].IN1
+C[23] => C[23].IN1
+C[24] => C[24].IN1
+C[25] => C[25].IN1
+C[26] => C[26].IN1
+C[27] => C[27].IN1
+C[28] => C[28].IN1
+C[29] => C[29].IN1
+C[30] => C[30].IN1
+C[31] => C[31].IN1
+D[0] => D[0].IN1
+D[1] => D[1].IN1
+D[2] => D[2].IN1
+D[3] => D[3].IN1
+D[4] => D[4].IN1
+D[5] => D[5].IN1
+D[6] => D[6].IN1
+D[7] => D[7].IN1
+D[8] => D[8].IN1
+D[9] => D[9].IN1
+D[10] => D[10].IN1
+D[11] => D[11].IN1
+D[12] => D[12].IN1
+D[13] => D[13].IN1
+D[14] => D[14].IN1
+D[15] => D[15].IN1
+D[16] => D[16].IN1
+D[17] => D[17].IN1
+D[18] => D[18].IN1
+D[19] => D[19].IN1
+D[20] => D[20].IN1
+D[21] => D[21].IN1
+D[22] => D[22].IN1
+D[23] => D[23].IN1
+D[24] => D[24].IN1
+D[25] => D[25].IN1
+D[26] => D[26].IN1
+D[27] => D[27].IN1
+D[28] => D[28].IN1
+D[29] => D[29].IN1
+D[30] => D[30].IN1
+D[31] => D[31].IN1
+Cin[0] => Cin[0].IN1
+Cin[1] => Cin[1].IN1
+Cin[2] => Cin[2].IN1
+Cin[3] => Cin[3].IN1
+Cin[4] => Cin[4].IN1
+Cin[5] => Cin[5].IN1
+Cin[6] => Cin[6].IN1
+Cin[7] => Cin[7].IN1
+Cin[8] => Cin[8].IN1
+Cin[9] => Cin[9].IN1
+Cin[10] => Cin[10].IN1
+Cin[11] => Cin[11].IN1
+Cin[12] => Cin[12].IN1
+Cin[13] => Cin[13].IN1
+Cin[14] => Cin[14].IN1
+Cin[15] => Cin[15].IN1
+Cin[16] => Cin[16].IN1
+Cin[17] => Cin[17].IN1
+Cin[18] => Cin[18].IN1
+Cin[19] => Cin[19].IN1
+Cin[20] => Cin[20].IN1
+Cin[21] => Cin[21].IN1
+Cin[22] => Cin[22].IN1
+Cin[23] => Cin[23].IN1
+Cin[24] => Cin[24].IN1
+Cin[25] => Cin[25].IN1
+Cin[26] => Cin[26].IN1
+Cin[27] => Cin[27].IN1
+Cin[28] => Cin[28].IN1
+Cin[29] => Cin[29].IN1
+Cin[30] => Cin[30].IN1
+Cin[31] => Cin[31].IN1
+Sum[0] <= compressor_1b:c0.Sum
+Sum[1] <= FA:array_compressor[1].fa.sum
+Sum[2] <= FA:array_compressor[2].fa.sum
+Sum[3] <= FA:array_compressor[3].fa.sum
+Sum[4] <= FA:array_compressor[4].fa.sum
+Sum[5] <= FA:array_compressor[5].fa.sum
+Sum[6] <= FA:array_compressor[6].fa.sum
+Sum[7] <= FA:array_compressor[7].fa.sum
+Sum[8] <= FA:array_compressor[8].fa.sum
+Sum[9] <= FA:array_compressor[9].fa.sum
+Sum[10] <= FA:array_compressor[10].fa.sum
+Sum[11] <= FA:array_compressor[11].fa.sum
+Sum[12] <= FA:array_compressor[12].fa.sum
+Sum[13] <= FA:array_compressor[13].fa.sum
+Sum[14] <= FA:array_compressor[14].fa.sum
+Sum[15] <= FA:array_compressor[15].fa.sum
+Sum[16] <= FA:array_compressor[16].fa.sum
+Sum[17] <= FA:array_compressor[17].fa.sum
+Sum[18] <= FA:array_compressor[18].fa.sum
+Sum[19] <= FA:array_compressor[19].fa.sum
+Sum[20] <= FA:array_compressor[20].fa.sum
+Sum[21] <= FA:array_compressor[21].fa.sum
+Sum[22] <= FA:array_compressor[22].fa.sum
+Sum[23] <= FA:array_compressor[23].fa.sum
+Sum[24] <= FA:array_compressor[24].fa.sum
+Sum[25] <= FA:array_compressor[25].fa.sum
+Sum[26] <= FA:array_compressor[26].fa.sum
+Sum[27] <= FA:array_compressor[27].fa.sum
+Sum[28] <= FA:array_compressor[28].fa.sum
+Sum[29] <= FA:array_compressor[29].fa.sum
+Sum[30] <= FA:array_compressor[30].fa.sum
+Sum[31] <= FA:array_compressor[31].fa.sum
+Carry <= FA:array_compressor[31].fa.carry
+
+
+|Compressor|compressor_1b:c0
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -11,5 +207,718 @@ Cin => Carry.IN1
 Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[1].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[1].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[2].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[2].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[3].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[3].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[4].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[4].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[5].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[5].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[6].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[6].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[7].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[7].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[8].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[8].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[9].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[9].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[10].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[10].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[11].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[11].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[12].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[12].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[13].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[13].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[14].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[14].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[15].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[15].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[16].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[16].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[17].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[17].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[18].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[18].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[19].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[19].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[20].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[20].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[21].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[21].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[22].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[22].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[23].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[23].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[24].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[24].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[25].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[25].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[26].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[26].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[27].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[27].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[28].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[28].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[29].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[29].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[30].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[30].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|compressor_1b:array_compressor[31].Cn
+A => xorAB.IN0
+A => Cout.IN1
+B => xorAB.IN1
+C => xorABCD.IN1
+C => Cout.IN1
+D => xorABCD.IN1
+D => Carry.IN1
+Cin => Sum.IN1
+Cin => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:array_compressor[31].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 

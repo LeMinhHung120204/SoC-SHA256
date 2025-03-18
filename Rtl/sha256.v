@@ -1,11 +1,3 @@
-module carry_save_adder (
-    input a, b, c,
-    output sum, carry
-);
-    assign sum   = a ^ b ^ c;
-    assign carry = (a & b) | (b & c) | (a & c);
-endmodule
-
 module sha256(
 	input wire [0:511] message,
    input wire clk,
