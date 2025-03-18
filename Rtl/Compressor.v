@@ -1,50 +1,24 @@
-// chua xong
+// Cong 4 so cung luc
 module Compressor(
 	input [31:0] A, B, C, D, Cin,
-	output [31:0]Sum,
-	output Carry
+	output [33:0]Sum
 );
 	wire [31:0] Cout_c;
 	wire [31:0] cout_fa;
 	wire [31:0] tmp_carry;
 	wire [31:1] tmp_sum;
 	
-	compressor_1b c0(
-		.A(A[0]),
-		.B(B[0]),
-		.C(C[0]),
-		.D(D[0]),
-		.Cin(Cin),
-		.Sum(Sum[0]),
-		.Cout(Cout_c[0]),
-		.Carry(tmp_carry[0])
-	);
+	compressor_1b c0(A[0], B[0], C[0], D[0], Cin, Sum[0], Cout_c[0], tmp_carry[0]);
 	
 	genvar i;
 	generate
 		for(i = 1; i < 32; i = i + 1) begin : array_compressor
-			compressor_1b Cn(
-				.A(A[i]),
-				.B(B[i]),
-				.C(C[i]),
-				.D(D[i]),
-				.Cin(Cout_c[i - 1]),
-				.Sum(tmp_sum[i]),
-				.Cout(Cout_c[i]),
-				.Carry(tmp_carry[i])
-			);
-			
-			FA fa(
-				.a(tmp_carry[i - 1]),
-				.b(tmp_sum[i]),
-				.cin(i == 1 ? 1'b0 : cout_fa[i - 1]),
-				.sum(Sum[i]),
-				.carry(cout_fa[i])
-			);
+			compressor_1b cn(A[i], B[i], C[i], D[i], Cout_c[i-1], tmp_sum[i], Cout_c[i], tmp_carry[i]);
+			FA fa(tmp_carry[i-1], tmp_sum[i], i == 1 ? 1'b0 : cout_fa[i-1], Sum[i], cout_fa[i]);
 		end
 	endgenerate
 	
-	assign Carry = cout_fa[31];
+	FA fa_n(tmp_carry[31], Cout_c[31], cout_fa[31], Sum[32], Sum[33]);
 endmodule 
 
 module compressor_1b(

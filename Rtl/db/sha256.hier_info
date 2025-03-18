@@ -159,39 +159,40 @@ Cin[28] => Cin[28].IN1
 Cin[29] => Cin[29].IN1
 Cin[30] => Cin[30].IN1
 Cin[31] => Cin[31].IN1
-Sum[0] <= compressor_1b:c0.Sum
-Sum[1] <= FA:array_compressor[1].fa.sum
-Sum[2] <= FA:array_compressor[2].fa.sum
-Sum[3] <= FA:array_compressor[3].fa.sum
-Sum[4] <= FA:array_compressor[4].fa.sum
-Sum[5] <= FA:array_compressor[5].fa.sum
-Sum[6] <= FA:array_compressor[6].fa.sum
-Sum[7] <= FA:array_compressor[7].fa.sum
-Sum[8] <= FA:array_compressor[8].fa.sum
-Sum[9] <= FA:array_compressor[9].fa.sum
-Sum[10] <= FA:array_compressor[10].fa.sum
-Sum[11] <= FA:array_compressor[11].fa.sum
-Sum[12] <= FA:array_compressor[12].fa.sum
-Sum[13] <= FA:array_compressor[13].fa.sum
-Sum[14] <= FA:array_compressor[14].fa.sum
-Sum[15] <= FA:array_compressor[15].fa.sum
-Sum[16] <= FA:array_compressor[16].fa.sum
-Sum[17] <= FA:array_compressor[17].fa.sum
-Sum[18] <= FA:array_compressor[18].fa.sum
-Sum[19] <= FA:array_compressor[19].fa.sum
-Sum[20] <= FA:array_compressor[20].fa.sum
-Sum[21] <= FA:array_compressor[21].fa.sum
-Sum[22] <= FA:array_compressor[22].fa.sum
-Sum[23] <= FA:array_compressor[23].fa.sum
-Sum[24] <= FA:array_compressor[24].fa.sum
-Sum[25] <= FA:array_compressor[25].fa.sum
-Sum[26] <= FA:array_compressor[26].fa.sum
-Sum[27] <= FA:array_compressor[27].fa.sum
-Sum[28] <= FA:array_compressor[28].fa.sum
-Sum[29] <= FA:array_compressor[29].fa.sum
-Sum[30] <= FA:array_compressor[30].fa.sum
-Sum[31] <= FA:array_compressor[31].fa.sum
-Carry <= FA:array_compressor[31].fa.carry
+Sum[0] <= compressor_1b:c0.port5
+Sum[1] <= FA:array_compressor[1].fa.port3
+Sum[2] <= FA:array_compressor[2].fa.port3
+Sum[3] <= FA:array_compressor[3].fa.port3
+Sum[4] <= FA:array_compressor[4].fa.port3
+Sum[5] <= FA:array_compressor[5].fa.port3
+Sum[6] <= FA:array_compressor[6].fa.port3
+Sum[7] <= FA:array_compressor[7].fa.port3
+Sum[8] <= FA:array_compressor[8].fa.port3
+Sum[9] <= FA:array_compressor[9].fa.port3
+Sum[10] <= FA:array_compressor[10].fa.port3
+Sum[11] <= FA:array_compressor[11].fa.port3
+Sum[12] <= FA:array_compressor[12].fa.port3
+Sum[13] <= FA:array_compressor[13].fa.port3
+Sum[14] <= FA:array_compressor[14].fa.port3
+Sum[15] <= FA:array_compressor[15].fa.port3
+Sum[16] <= FA:array_compressor[16].fa.port3
+Sum[17] <= FA:array_compressor[17].fa.port3
+Sum[18] <= FA:array_compressor[18].fa.port3
+Sum[19] <= FA:array_compressor[19].fa.port3
+Sum[20] <= FA:array_compressor[20].fa.port3
+Sum[21] <= FA:array_compressor[21].fa.port3
+Sum[22] <= FA:array_compressor[22].fa.port3
+Sum[23] <= FA:array_compressor[23].fa.port3
+Sum[24] <= FA:array_compressor[24].fa.port3
+Sum[25] <= FA:array_compressor[25].fa.port3
+Sum[26] <= FA:array_compressor[26].fa.port3
+Sum[27] <= FA:array_compressor[27].fa.port3
+Sum[28] <= FA:array_compressor[28].fa.port3
+Sum[29] <= FA:array_compressor[29].fa.port3
+Sum[30] <= FA:array_compressor[30].fa.port3
+Sum[31] <= FA:array_compressor[31].fa.port3
+Sum[32] <= FA:fa_n.port3
+Sum[33] <= FA:fa_n.port4
 
 
 |Compressor|compressor_1b:c0
@@ -209,7 +210,7 @@ Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[1].Cn
+|Compressor|compressor_1b:array_compressor[1].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -232,7 +233,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[2].Cn
+|Compressor|compressor_1b:array_compressor[2].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -255,7 +256,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[3].Cn
+|Compressor|compressor_1b:array_compressor[3].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -278,7 +279,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[4].Cn
+|Compressor|compressor_1b:array_compressor[4].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -301,7 +302,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[5].Cn
+|Compressor|compressor_1b:array_compressor[5].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -324,7 +325,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[6].Cn
+|Compressor|compressor_1b:array_compressor[6].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -347,7 +348,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[7].Cn
+|Compressor|compressor_1b:array_compressor[7].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -370,7 +371,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[8].Cn
+|Compressor|compressor_1b:array_compressor[8].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -393,7 +394,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[9].Cn
+|Compressor|compressor_1b:array_compressor[9].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -416,7 +417,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[10].Cn
+|Compressor|compressor_1b:array_compressor[10].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -439,7 +440,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[11].Cn
+|Compressor|compressor_1b:array_compressor[11].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -462,7 +463,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[12].Cn
+|Compressor|compressor_1b:array_compressor[12].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -485,7 +486,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[13].Cn
+|Compressor|compressor_1b:array_compressor[13].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -508,7 +509,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[14].Cn
+|Compressor|compressor_1b:array_compressor[14].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -531,7 +532,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[15].Cn
+|Compressor|compressor_1b:array_compressor[15].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -554,7 +555,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[16].Cn
+|Compressor|compressor_1b:array_compressor[16].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -577,7 +578,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[17].Cn
+|Compressor|compressor_1b:array_compressor[17].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -600,7 +601,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[18].Cn
+|Compressor|compressor_1b:array_compressor[18].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -623,7 +624,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[19].Cn
+|Compressor|compressor_1b:array_compressor[19].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -646,7 +647,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[20].Cn
+|Compressor|compressor_1b:array_compressor[20].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -669,7 +670,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[21].Cn
+|Compressor|compressor_1b:array_compressor[21].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -692,7 +693,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[22].Cn
+|Compressor|compressor_1b:array_compressor[22].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -715,7 +716,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[23].Cn
+|Compressor|compressor_1b:array_compressor[23].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -738,7 +739,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[24].Cn
+|Compressor|compressor_1b:array_compressor[24].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -761,7 +762,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[25].Cn
+|Compressor|compressor_1b:array_compressor[25].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -784,7 +785,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[26].Cn
+|Compressor|compressor_1b:array_compressor[26].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -807,7 +808,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[27].Cn
+|Compressor|compressor_1b:array_compressor[27].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -830,7 +831,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[28].Cn
+|Compressor|compressor_1b:array_compressor[28].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -853,7 +854,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[29].Cn
+|Compressor|compressor_1b:array_compressor[29].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -876,7 +877,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[30].Cn
+|Compressor|compressor_1b:array_compressor[30].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -899,7 +900,7 @@ sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Compressor|compressor_1b:array_compressor[31].Cn
+|Compressor|compressor_1b:array_compressor[31].cn
 A => xorAB.IN0
 A => Cout.IN1
 B => xorAB.IN1
@@ -915,6 +916,14 @@ Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Compressor|FA:array_compressor[31].fa
+a => Add0.IN1
+b => Add0.IN2
+cin => Add1.IN4
+sum <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Compressor|FA:fa_n
 a => Add0.IN1
 b => Add0.IN2
 cin => Add1.IN4

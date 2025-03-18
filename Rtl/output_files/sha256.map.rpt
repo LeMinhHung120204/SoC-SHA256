@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sha256
-Tue Mar 18 23:34:50 2025
+Wed Mar 19 01:09:29 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -14,11 +14,10 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "compressor_1b:array_compressor[31].Cn"
- 10. Port Connectivity Checks: "FA:array_compressor[1].fa"
- 11. Port Connectivity Checks: "compressor_1b:c0"
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  9. Port Connectivity Checks: "FA:array_compressor[1].fa"
+ 10. Port Connectivity Checks: "compressor_1b:c0"
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -44,16 +43,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 18 23:34:50 2025           ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 19 01:09:29 2025           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; sha256                                          ;
 ; Top-level Entity Name              ; Compressor                                      ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 192                                             ;
-;     Total combinational functions  ; 192                                             ;
+; Total logic elements               ; 197                                             ;
+;     Total combinational functions  ; 197                                             ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 193                                             ;
+; Total pins                         ; 194                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -171,28 +170,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 192   ;
+; Estimated Total logic elements              ; 197   ;
 ;                                             ;       ;
-; Total combinational functions               ; 192   ;
+; Total combinational functions               ; 197   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 91    ;
-;     -- 3 input functions                    ; 62    ;
+;     -- 4 input functions                    ; 93    ;
+;     -- 3 input functions                    ; 65    ;
 ;     -- <=2 input functions                  ; 39    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 192   ;
+;     -- normal mode                          ; 197   ;
 ;     -- arithmetic mode                      ; 0     ;
 ;                                             ;       ;
 ; Total registers                             ; 0     ;
 ;     -- Dedicated logic registers            ; 0     ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 193   ;
+; I/O pins                                    ; 194   ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; C[3]  ;
 ; Maximum fan-out                             ; 4     ;
-; Total fan-out                               ; 661   ;
-; Average fan-out                             ; 1.72  ;
+; Total fan-out                               ; 679   ;
+; Average fan-out                             ; 1.74  ;
 +---------------------------------------------+-------+
 
 
@@ -201,7 +200,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                 ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Library Name ;
 +--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
-; |Compressor                                ; 192 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 193  ; 0            ; |Compressor                                       ; work         ;
+; |Compressor                                ; 197 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 194  ; 0            ; |Compressor                                       ; work         ;
 ;    |FA:array_compressor[10].fa|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[10].fa            ; work         ;
 ;    |FA:array_compressor[11].fa|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[11].fa            ; work         ;
 ;    |FA:array_compressor[12].fa|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[12].fa            ; work         ;
@@ -217,15 +216,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |FA:array_compressor[21].fa|            ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[21].fa            ; work         ;
 ;    |FA:array_compressor[22].fa|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[22].fa            ; work         ;
 ;    |FA:array_compressor[23].fa|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[23].fa            ; work         ;
-;    |FA:array_compressor[24].fa|            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[24].fa            ; work         ;
-;    |FA:array_compressor[25].fa|            ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[25].fa            ; work         ;
-;    |FA:array_compressor[26].fa|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[26].fa            ; work         ;
-;    |FA:array_compressor[27].fa|            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[27].fa            ; work         ;
-;    |FA:array_compressor[28].fa|            ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[28].fa            ; work         ;
-;    |FA:array_compressor[29].fa|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[29].fa            ; work         ;
+;    |FA:array_compressor[24].fa|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[24].fa            ; work         ;
+;    |FA:array_compressor[25].fa|            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[25].fa            ; work         ;
+;    |FA:array_compressor[26].fa|            ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[26].fa            ; work         ;
+;    |FA:array_compressor[27].fa|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[27].fa            ; work         ;
+;    |FA:array_compressor[28].fa|            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[28].fa            ; work         ;
+;    |FA:array_compressor[29].fa|            ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[29].fa            ; work         ;
 ;    |FA:array_compressor[2].fa|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[2].fa             ; work         ;
 ;    |FA:array_compressor[30].fa|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[30].fa            ; work         ;
-;    |FA:array_compressor[31].fa|            ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[31].fa            ; work         ;
+;    |FA:array_compressor[31].fa|            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[31].fa            ; work         ;
 ;    |FA:array_compressor[3].fa|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[3].fa             ; work         ;
 ;    |FA:array_compressor[4].fa|             ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[4].fa             ; work         ;
 ;    |FA:array_compressor[5].fa|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[5].fa             ; work         ;
@@ -233,37 +232,38 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |FA:array_compressor[7].fa|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[7].fa             ; work         ;
 ;    |FA:array_compressor[8].fa|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[8].fa             ; work         ;
 ;    |FA:array_compressor[9].fa|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:array_compressor[9].fa             ; work         ;
-;    |compressor_1b:array_compressor[10].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[10].Cn ; work         ;
-;    |compressor_1b:array_compressor[11].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[11].Cn ; work         ;
-;    |compressor_1b:array_compressor[12].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[12].Cn ; work         ;
-;    |compressor_1b:array_compressor[13].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[13].Cn ; work         ;
-;    |compressor_1b:array_compressor[14].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[14].Cn ; work         ;
-;    |compressor_1b:array_compressor[15].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[15].Cn ; work         ;
-;    |compressor_1b:array_compressor[16].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[16].Cn ; work         ;
-;    |compressor_1b:array_compressor[17].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[17].Cn ; work         ;
-;    |compressor_1b:array_compressor[18].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[18].Cn ; work         ;
-;    |compressor_1b:array_compressor[19].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[19].Cn ; work         ;
-;    |compressor_1b:array_compressor[1].Cn|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[1].Cn  ; work         ;
-;    |compressor_1b:array_compressor[20].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[20].Cn ; work         ;
-;    |compressor_1b:array_compressor[21].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[21].Cn ; work         ;
-;    |compressor_1b:array_compressor[22].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[22].Cn ; work         ;
-;    |compressor_1b:array_compressor[23].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[23].Cn ; work         ;
-;    |compressor_1b:array_compressor[24].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[24].Cn ; work         ;
-;    |compressor_1b:array_compressor[25].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[25].Cn ; work         ;
-;    |compressor_1b:array_compressor[26].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[26].Cn ; work         ;
-;    |compressor_1b:array_compressor[27].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[27].Cn ; work         ;
-;    |compressor_1b:array_compressor[28].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[28].Cn ; work         ;
-;    |compressor_1b:array_compressor[29].Cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[29].Cn ; work         ;
-;    |compressor_1b:array_compressor[2].Cn|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[2].Cn  ; work         ;
-;    |compressor_1b:array_compressor[30].Cn| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[30].Cn ; work         ;
-;    |compressor_1b:array_compressor[31].Cn| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[31].Cn ; work         ;
-;    |compressor_1b:array_compressor[3].Cn|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[3].Cn  ; work         ;
-;    |compressor_1b:array_compressor[4].Cn|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[4].Cn  ; work         ;
-;    |compressor_1b:array_compressor[5].Cn|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[5].Cn  ; work         ;
-;    |compressor_1b:array_compressor[6].Cn|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[6].Cn  ; work         ;
-;    |compressor_1b:array_compressor[7].Cn|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[7].Cn  ; work         ;
-;    |compressor_1b:array_compressor[8].Cn|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[8].Cn  ; work         ;
-;    |compressor_1b:array_compressor[9].Cn|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[9].Cn  ; work         ;
+;    |FA:fa_n|                               ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|FA:fa_n                               ; work         ;
+;    |compressor_1b:array_compressor[10].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[10].cn ; work         ;
+;    |compressor_1b:array_compressor[11].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[11].cn ; work         ;
+;    |compressor_1b:array_compressor[12].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[12].cn ; work         ;
+;    |compressor_1b:array_compressor[13].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[13].cn ; work         ;
+;    |compressor_1b:array_compressor[14].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[14].cn ; work         ;
+;    |compressor_1b:array_compressor[15].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[15].cn ; work         ;
+;    |compressor_1b:array_compressor[16].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[16].cn ; work         ;
+;    |compressor_1b:array_compressor[17].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[17].cn ; work         ;
+;    |compressor_1b:array_compressor[18].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[18].cn ; work         ;
+;    |compressor_1b:array_compressor[19].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[19].cn ; work         ;
+;    |compressor_1b:array_compressor[1].cn|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[1].cn  ; work         ;
+;    |compressor_1b:array_compressor[20].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[20].cn ; work         ;
+;    |compressor_1b:array_compressor[21].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[21].cn ; work         ;
+;    |compressor_1b:array_compressor[22].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[22].cn ; work         ;
+;    |compressor_1b:array_compressor[23].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[23].cn ; work         ;
+;    |compressor_1b:array_compressor[24].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[24].cn ; work         ;
+;    |compressor_1b:array_compressor[25].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[25].cn ; work         ;
+;    |compressor_1b:array_compressor[26].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[26].cn ; work         ;
+;    |compressor_1b:array_compressor[27].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[27].cn ; work         ;
+;    |compressor_1b:array_compressor[28].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[28].cn ; work         ;
+;    |compressor_1b:array_compressor[29].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[29].cn ; work         ;
+;    |compressor_1b:array_compressor[2].cn|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[2].cn  ; work         ;
+;    |compressor_1b:array_compressor[30].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[30].cn ; work         ;
+;    |compressor_1b:array_compressor[31].cn| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[31].cn ; work         ;
+;    |compressor_1b:array_compressor[3].cn|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[3].cn  ; work         ;
+;    |compressor_1b:array_compressor[4].cn|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[4].cn  ; work         ;
+;    |compressor_1b:array_compressor[5].cn|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[5].cn  ; work         ;
+;    |compressor_1b:array_compressor[6].cn|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[6].cn  ; work         ;
+;    |compressor_1b:array_compressor[7].cn|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[7].cn  ; work         ;
+;    |compressor_1b:array_compressor[8].cn|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[8].cn  ; work         ;
+;    |compressor_1b:array_compressor[9].cn|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:array_compressor[9].cn  ; work         ;
 ;    |compressor_1b:c0|                      ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Compressor|compressor_1b:c0                      ; work         ;
 +--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -282,16 +282,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "compressor_1b:array_compressor[31].Cn"                                               ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Cout  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; Carry ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------+
@@ -327,7 +317,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Mar 18 23:34:49 2025
+    Info: Processing started: Wed Mar 19 01:09:28 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sha256 -c sha256
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file sha256.v
@@ -379,13 +369,13 @@ Warning (21074): Design contains 31 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "Cin[29]"
     Warning (15610): No output dependent on input pin "Cin[30]"
     Warning (15610): No output dependent on input pin "Cin[31]"
-Info (21057): Implemented 385 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 391 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 160 input pins
-    Info (21059): Implemented 33 output pins
-    Info (21061): Implemented 192 logic cells
+    Info (21059): Implemented 34 output pins
+    Info (21061): Implemented 197 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 36 warnings
-    Info: Peak virtual memory: 4600 megabytes
-    Info: Processing ended: Tue Mar 18 23:34:50 2025
+    Info: Peak virtual memory: 4601 megabytes
+    Info: Processing ended: Wed Mar 19 01:09:29 2025
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
