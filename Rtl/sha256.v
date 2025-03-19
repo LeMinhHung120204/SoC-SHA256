@@ -1,12 +1,31 @@
 module sha256(
-	input wire [0:511] message,
-   input wire clk,
-   input wire reset,
-   output reg ready,
-	output wire [255:0] hashvalue
+	input clk,
+   input rst,
+	input	[255:0]	digest_in,
+	input [511:0] message,
+	output [255:0]	digest_out,
+	output [255:0] hashvalue,
+	output valid
 );
 	//Expander
 	wire 	[31:0]  w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, w13, w14, w15, w16;
+	assign w1 = message[511:480];
+	assign w2 = message[479:448];
+	assign w3 = message[447:416];
+	assign w4 = message[415:384];
+	assign w5 = message[383:352];
+	assign w6 = message[351:320];
+	assign w7 = message[319:288];
+	assign w8 = message[287:256];
+	assign w9 = message[255:224];
+	assign w10 = message[223:192];
+	assign w11 = message[191:160];
+	assign w12 = message[159:128];
+	assign w13 = message[127:96];
+	assign w14 = message[95:64];
+	assign w15 = message[63:32];
+	assign w16 = message[31:0];
+	
 	
 	wire [31:0] k[0:63];
    assign k[00] = 32'h428a2f98;
@@ -84,14 +103,7 @@ module sha256(
    assign h6 = 32'h1f83d9ab;
    assign h7 = 32'h5be0cd19;
 	
-	wire 	[31:0]  a;
-	wire 	[31:0]  b;
-	wire 	[31:0]  c;
-	wire 	[31:0]  d;
-	wire 	[31:0]  e;
-	wire 	[31:0]  f;
-	wire 	[31:0]  g;
-	wire 	[31:0]  h;
+	wire 	[31:0]  a, b, c, d, e, f, g, h;
 	
 	assign ch    = (e & f) ^ ((~e) & g);
 	assign maj   = (a & b) ^ (a & c) ^ (b & c);
