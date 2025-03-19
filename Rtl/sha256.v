@@ -1,3 +1,34 @@
+module s0(
+    input [31:0] X,
+    output [31:0] Y
+);
+    assign Y = ( {X[6:0],X[31:7]} ^ {X[17:0],X[31:18]} ^ X>>3 );
+endmodule
+    
+module s1(
+    input [31:0] X,
+    output [31:0] Y
+);
+    assign Y = ( {X[16:0],X[31:17]} ^ {X[18:0],X[31:19]} ^ X>>10 );
+endmodule
+
+// calculation Wi (16 <= i <= 63)
+module w_new_calc(
+    input [31:0] w_16,
+    input [31:0] w_15,
+    input [31:0] w_7,
+    input [31:0] w_2,
+    output [31:0] w_new
+);
+    
+    wire [31:0] temp1, temp2;
+
+    s0 s0(w_15, temp1);
+    s1 s1(w_2, temp2);
+
+    assign w_new = temp1 + temp2 + w_16 + w_7;
+endmodule
+
 module sha256(
 	input clk,
    input rst,
