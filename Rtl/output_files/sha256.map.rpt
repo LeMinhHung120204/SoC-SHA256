@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sha256
-Wed Apr 02 19:45:31 2025
+Wed Apr 02 22:52:40 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -47,13 +47,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Apr 02 19:45:31 2025           ;
+; Analysis & Synthesis Status        ; Successful - Wed Apr 02 22:52:40 2025           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; sha256                                          ;
 ; Top-level Entity Name              ; sha_core                                        ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 2,472                                           ;
-;     Total combinational functions  ; 1,956                                           ;
+; Total logic elements               ; 2,450                                           ;
+;     Total combinational functions  ; 2,446                                           ;
 ;     Dedicated logic registers      ; 1,091                                           ;
 ; Total registers                    ; 1091                                            ;
 ; Total pins                         ; 772                                             ;
@@ -175,16 +175,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 2,472 ;
+; Estimated Total logic elements              ; 2,450 ;
 ;                                             ;       ;
-; Total combinational functions               ; 1956  ;
+; Total combinational functions               ; 2446  ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 656   ;
-;     -- 3 input functions                    ; 662   ;
+;     -- 4 input functions                    ; 1137  ;
+;     -- 3 input functions                    ; 671   ;
 ;     -- <=2 input functions                  ; 638   ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 1300  ;
+;     -- normal mode                          ; 1790  ;
 ;     -- arithmetic mode                      ; 656   ;
 ;                                             ;       ;
 ; Total registers                             ; 1091  ;
@@ -195,8 +195,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clk   ;
 ; Maximum fan-out                             ; 1091  ;
-; Total fan-out                               ; 10336 ;
-; Average fan-out                             ; 2.71  ;
+; Total fan-out                               ; 12351 ;
+; Average fan-out                             ; 2.87  ;
 +---------------------------------------------+-------+
 
 
@@ -205,7 +205,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
 ; Compilation Hierarchy Node       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Library Name ;
 +----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+--------------+
-; |sha_core                        ; 1956 (1261)       ; 1091 (1091)  ; 0           ; 0            ; 0       ; 0         ; 772  ; 0            ; |sha_core                                   ; work         ;
+; |sha_core                        ; 2446 (1751)       ; 1091 (1091)  ; 0           ; 0            ; 0       ; 0         ; 772  ; 0            ; |sha_core                                   ; work         ;
 ;    |ch:ch1|                      ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|ch:ch1                            ; work         ;
 ;    |csa:csa0|                    ; 126 (63)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0                          ; work         ;
 ;       |FA3:fa_array[0].fa_inst|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|FA3:fa_array[0].fa_inst  ; work         ;
@@ -504,7 +504,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Total registers                              ; 1091  ;
 ; Number of registers using Synchronous Clear  ; 40    ;
-; Number of registers using Synchronous Load   ; 64    ;
+; Number of registers using Synchronous Load   ; 96    ;
 ; Number of registers using Asynchronous Clear ; 835   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 1083  ;
@@ -517,8 +517,9 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 40 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; Yes        ; |sha_core|reg_in[228]      ;
-; 34:1               ; 32 bits   ; 704 LEs       ; 352 LEs              ; 352 LEs                ; No         ; |sha_core|w_i[17]          ;
+; 3:1                ; 40 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; Yes        ; |sha_core|reg_in[146]      ;
+; 3:1                ; 512 bits  ; 1024 LEs      ; 512 LEs              ; 512 LEs                ; Yes        ; |sha_core|buffer[447]      ;
+; 34:1               ; 32 bits   ; 704 LEs       ; 352 LEs              ; 352 LEs                ; No         ; |sha_core|w_i[31]          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -601,7 +602,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -611,7 +612,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Apr 02 19:45:27 2025
+    Info: Processing started: Wed Apr 02 22:52:35 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sha256 -c sha256
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file sha256.v
@@ -630,9 +631,7 @@ Info (12021): Found 5 design units, including 5 entities, in source file sha_cor
     Info (12023): Found entity 4: maj
     Info (12023): Found entity 5: sha_core
 Info (12127): Elaborating entity "sha_core" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at sha_core.v(56): truncated value with size 64 to match size of target (32)
-Warning (10230): Verilog HDL assignment warning at sha_core.v(57): truncated value with size 64 to match size of target (32)
-Warning (10230): Verilog HDL assignment warning at sha_core.v(189): truncated value with size 7 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at sha_core.v(202): truncated value with size 7 to match size of target (6)
 Info (12128): Elaborating entity "ch" for hierarchy "ch:ch0"
 Info (12128): Elaborating entity "sum_1" for hierarchy "sum_1:s1_0"
 Info (12128): Elaborating entity "sum_0" for hierarchy "sum_0:sum0_0"
@@ -644,14 +643,14 @@ Info (276014): Found 1 instances of uninferred RAM logic
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3244 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3254 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 515 input pins
     Info (21059): Implemented 257 output pins
-    Info (21061): Implemented 2472 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info (21061): Implemented 2482 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 4623 megabytes
-    Info: Processing ended: Wed Apr 02 19:45:31 2025
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Processing ended: Wed Apr 02 22:52:40 2025
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 

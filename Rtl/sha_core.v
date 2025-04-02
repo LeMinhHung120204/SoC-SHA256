@@ -32,47 +32,65 @@ module sha_core(
 	output reg [255:0] hashvalue,
 	output reg valid
 );
+
 	reg [511:0] buffer;
-	wire [31:0] w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, w13, w14, w15, w16;
-	assign w1 = buffer[511:480];
-	assign w2 = buffer[479:448];
-	assign w3 = buffer[447:416];
-	assign w4 = buffer[415:384];
-	assign w5 = buffer[383:352];
-	assign w6 = buffer[351:320];
-	assign w7 = buffer[319:288];
-	assign w8 = buffer[287:256];
-	assign w9 = buffer[255:224];
-	assign w10 = buffer[223:192];
-	assign w11 = buffer[191:160];
-	assign w12 = buffer[159:128];
-	assign w13 = buffer[127:96];
-	assign w14 = buffer[95:64];
-	assign w15 = buffer[63:32];
-	assign w16 = buffer[31:0];
+	wire [511:0] block_out_wire;
+	wire [31:0] w0, w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, w13, w14, w15;
+	assign w0	= buffer[511:480];
+	assign w1	= buffer[479:448];
+	assign w2	= buffer[447:416];
+	assign w3	= buffer[415:384];
+	assign w4	= buffer[383:352];
+	assign w5	= buffer[351:320];
+	assign w6	= buffer[319:288];
+	assign w7	= buffer[287:256];
+	assign w8	= buffer[255:224];
+	assign w9	= buffer[223:192];
+	assign w10	= buffer[191:160];
+	assign w11	= buffer[159:128];
+	assign w12	= buffer[127:96];
+	assign w13	= buffer[95:64];
+	assign w14	= buffer[63:32];
+	assign w15	= buffer[31:0];
 	
 	wire [31:0] d0_256;
 	wire [31:0] d1_256;
-	assign d0_256 = {w2[6:0],w2[31:7],w2[6:0],w2[31:7]}^{w2[17:0],w2[31:18],w2[17:0],w2[31:18]}^{3'b000,w2[31:3],3'b000,w2[31:3]};
-	assign d1_256 = {w15[16:0],w15[31:17],w15[16:0],w15[31:17]}^{w15[18:0],w15[31:19],w15[18:0],w15[31:19]}^{10'b0000000000,w15[31:10],10'b0000000000,w15[31:10]};
+	
+	assign d0_256 = {w1[6:0], w1[31:7]} ^ {w1[17:0], w1[31:18]} ^ {3'b000, w1[31:3]};
+	assign d1_256 = {w14[16:0], w14[31:17]} ^ {w14[18:0], w14[31:19]} ^ {10'b0000000000, w14[31:10]};
 	
 	wire [31:0] w_i;
-	assign w_i = (counter_w_reg == 0) ? w1: 
-					(counter_w_reg == 1) ? w2:
-					(counter_w_reg == 2) ? w3:
-					(counter_w_reg == 3) ? w4:
-					(counter_w_reg == 4) ? w5:
-					(counter_w_reg == 5) ? w6:
-					(counter_w_reg == 6) ? w7:
-					(counter_w_reg == 7) ? w8:
-					(counter_w_reg == 8) ? w9:
-					(counter_w_reg == 9) ? w10:
-					(counter_w_reg == 10) ? w11:
-					(counter_w_reg == 11) ? w12:
-					(counter_w_reg == 12) ? w13:
-					(counter_w_reg == 13) ? w14:
-					(counter_w_reg == 14) ? w15:
-					(counter_w_reg == 15) ? w16: d0_256 + w10 + d1_256 + w1;  
+	assign w_i = (counter_w_reg == 0)	? w0: 
+					(counter_w_reg == 1)		? w1:
+					(counter_w_reg == 2)		? w2:
+					(counter_w_reg == 3)		? w3:
+					(counter_w_reg == 4)		? w4:
+					(counter_w_reg == 5)		? w5:
+					(counter_w_reg == 6)		? w6:
+					(counter_w_reg == 7)		? w7:
+					(counter_w_reg == 8)		? w8:
+					(counter_w_reg == 9)		? w9:
+					(counter_w_reg == 10)	? w10:
+					(counter_w_reg == 11)	? w11:
+					(counter_w_reg == 12)	? w12:
+					(counter_w_reg == 13)	? w13:
+					(counter_w_reg == 14)	? w14:
+					(counter_w_reg == 15)	? w15: d0_256 + w9 + d1_256 + w0;  
+					
+	assign block_out_wire = {w1,w2,w3,w4,w5,w6,w7,w8,w9,w10,w11,w12,w13,w14,w15,w_i};
+	
+	always @(posedge clk or negedge clr) begin
+		if (~clr) begin
+			buffer <= 512'd0;
+		end
+		else begin
+			if (write_en)
+				buffer <= message;
+			if (counter_reg >= 17 && counter_reg <= 64)
+				buffer <= block_out_wire;
+		end
+	end
+	
 	
 	wire [31:0] h0, h1, h2, h3, h4, h5, h6, h7;
 	assign h0 = 32'h6a09e667; // a0
@@ -126,15 +144,15 @@ module sha_core(
 				reg_in[159:128]	<= h7;	// h0
 			end
 			else begin
-				reg_in[319:288] 	<= (counter_reg == 2) ? h0 : as;		// as
-				reg_ac 				<= (counter_reg == 2) ? 1'b0 : ac;	// ac
-				reg_in[287:256] 	<= (counter_reg == 2) ? h1 : at;		// b
-				reg_in[255:224] 	<= (counter_reg == 2) ? h2 : reg_in[287:256];	// c
-				reg_in[223:192] 	<= (counter_reg == 2) ? h4 : ei;		// e
-				reg_in[191:160] 	<= (counter_reg == 2) ? h5 : reg_in[223:192];	// f
-				reg_in[159:128] 	<= (counter_reg == 2) ? h6 : reg_in[287:256];	// g
-				reg_in[127:96] 	<= (counter_reg == 2) ? S0 : si;		// s
-				reg_in[95:64] 		<= (counter_reg == 2) ? N0 : ni; // n
+				reg_in[319:288] 	<= (counter_reg == 2) ? h0 	: as;		// as
+				reg_ac 				<= (counter_reg == 2) ? 1'b0	: ac;	// ac
+				reg_in[287:256] 	<= (counter_reg == 2) ? h1		: at;		// b
+				reg_in[255:224] 	<= (counter_reg == 2) ? h2		: reg_in[287:256];	// c
+				reg_in[223:192] 	<= (counter_reg == 2) ? h4		: ei;		// e
+				reg_in[191:160] 	<= (counter_reg == 2) ? h5		: reg_in[223:192];	// f
+				reg_in[159:128] 	<= (counter_reg == 2) ? h6		: reg_in[287:256];	// g
+				reg_in[127:96] 	<= (counter_reg == 2) ? S0		: si;		// s
+				reg_in[95:64] 		<= (counter_reg == 2) ? N0		: ni; // n
 				reg_in[63:32] 		<= tmp2 + tmp3;	// p
 				reg_in[31:0] 		<= tmp4 + tmp5;	// q
 			end
@@ -152,18 +170,13 @@ module sha_core(
 	
 	always @(posedge clk or negedge clr) begin
 		if (~clr) begin
-			counter_reg <= 7'd0;
-			valid <= 1'b0;
-			buffer <= 512'b0;
+			counter_reg	<= 7'd0;
+			valid			<= 1'b0;
 		end
 		else begin
-			if (write_en) begin
-				buffer <= message;
-			end
-			
 			if(counter_reg == 65) begin
-				hashvalue[159:128] <= h3 + reg_in[255:224];		// d
-				hashvalue[31:0] <= h7 + reg_in[159:128];			// g
+				hashvalue[159:128]	<= h3 + reg_in[255:224];	// d
+				hashvalue[31:0]		<= h7 + reg_in[159:128];	// g
 			end 
 			else if(counter_reg == 66) begin
 				valid <= 1'b1;
@@ -178,8 +191,8 @@ module sha_core(
 				counter_reg <= counter_reg + 1'b1;
 			end
 			else begin
-				counter_reg <= 7'd0;
-				valid <= 1'b0;
+				counter_reg	<= 7'd0;
+				valid			<= 1'b0;
 			end
 		end
 	end
@@ -188,7 +201,6 @@ module sha_core(
 	
 	assign counter_w_reg = (counter_reg <= 7'd64) ? counter_reg - 1'b1 :  6'd63;
 									
-
 	always @(*) begin
 		case(counter_w_reg)
 			00: K = 32'h428a2f98;
