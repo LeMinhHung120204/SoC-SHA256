@@ -1,6 +1,6 @@
 module sum_0(
 	input [31:0] a,
-	output out
+	output [31:0] out
 );
 	assign out = {a[1:0], a[31:2]} ^ {a[12:0], a[31:13]} ^ {a[21:0], a[31:22]};
 endmodule 
@@ -27,28 +27,29 @@ module maj(
 endmodule
 
 module sha_core(
-	input clk, clr,
+	input clk, clr, write_en,
 	input [511:0] message,
 	output reg [255:0] hashvalue,
 	output reg valid
 );
+	reg [511:0] buffer;
 	wire [31:0] w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, w13, w14, w15, w16;
-	assign w1 = message[511:480];
-	assign w2 = message[479:448];
-	assign w3 = message[447:416];
-	assign w4 = message[415:384];
-	assign w5 = message[383:352];
-	assign w6 = message[351:320];
-	assign w7 = message[319:288];
-	assign w8 = message[287:256];
-	assign w9 = message[255:224];
-	assign w10 = message[223:192];
-	assign w11 = message[191:160];
-	assign w12 = message[159:128];
-	assign w13 = message[127:96];
-	assign w14 = message[95:64];
-	assign w15 = message[63:32];
-	assign w16 = message[31:0];
+	assign w1 = buffer[511:480];
+	assign w2 = buffer[479:448];
+	assign w3 = buffer[447:416];
+	assign w4 = buffer[415:384];
+	assign w5 = buffer[383:352];
+	assign w6 = buffer[351:320];
+	assign w7 = buffer[319:288];
+	assign w8 = buffer[287:256];
+	assign w9 = buffer[255:224];
+	assign w10 = buffer[223:192];
+	assign w11 = buffer[191:160];
+	assign w12 = buffer[159:128];
+	assign w13 = buffer[127:96];
+	assign w14 = buffer[95:64];
+	assign w15 = buffer[63:32];
+	assign w16 = buffer[31:0];
 	
 	wire [31:0] d0_256;
 	wire [31:0] d1_256;
@@ -74,14 +75,14 @@ module sha_core(
 					(counter_w_reg == 15) ? w16: d0_256 + w10 + d1_256 + w1;  
 	
 	wire [31:0] h0, h1, h2, h3, h4, h5, h6, h7;
-   assign h0 = 32'h6a09e667; // a0
-   assign h1 = 32'hbb67ae85; // b0
-   assign h2 = 32'h3c6ef372; // c0
-   assign h3 = 32'ha54ff53a; // d0
-   assign h4 = 32'h510e527f; // e0
-   assign h5 = 32'h9b05688c; // f0
-   assign h6 = 32'h1f83d9ab; // g0
-   assign h7 = 32'h5be0cd19; // h0
+	assign h0 = 32'h6a09e667; // a0
+	assign h1 = 32'hbb67ae85; // b0
+	assign h2 = 32'h3c6ef372; // c0
+	assign h3 = 32'ha54ff53a; // d0
+	assign h4 = 32'h510e527f; // e0
+	assign h5 = 32'h9b05688c; // f0
+	assign h6 = 32'h1f83d9ab; // g0
+	assign h7 = 32'h5be0cd19; // h0
 	
 	reg [31:0] K;
 	reg [6:0] counter_reg;
@@ -96,40 +97,14 @@ module sha_core(
 	wire [31:0] as;
 	wire ac;
 	
-	wire [31:0] updated_as;
-	wire updated_ac;
-	wire [31:0] updated_b;
-	wire [31:0] updated_c;
-	wire [31:0] updated_e;
-	wire [31:0] updated_f;
-	wire [31:0] updated_g;
-	wire [31:0] updated_s;
-	wire [31:0] updated_n;
-	wire [31:0] updated_q;
-	wire [31:0] updated_p;
 	wire [31:0] ei;
 	wire [31:0] at;
-	
 	
 	ch ch0(h4, h5, h6, N0);
 	sum_1 s1_0(h4, S0);
 	
 	assign ei = tmp1 + tmp0;
 	assign at = reg_in[319:288] + reg_ac;
-	assign updated_ac = (counter_reg <= 1) ? 1'b0 : ac;
-	assign updated_as = (counter_reg <= 1) ? h0 : as;
-	assign updated_b 	= (counter_reg <= 1) ? h1 : at;
-	assign updated_c 	= (counter_reg == 0) ? h3 :
-								(counter_reg == 1) ? h2 : reg_in[287:256];
-	assign updated_e 	= (counter_reg <= 1) ? h4 : ei;
-	assign updated_f 	= (counter_reg <= 1) ? h5 : reg_in[223:192];
-	assign updated_g 	= (counter_reg == 0) ? h7 :
-								(counter_reg == 1) ? h6 : reg_in[287:256];
-	assign updated_s 	= (counter_reg <= 1) ? S0 : si;
-	assign updated_n 	= (counter_reg <= 1) ? N0 : ni;
-	assign updated_p 	= tmp2 + tmp3;
-	assign updated_q	= tmp4 + tmp5;
-	
 	
 	wire [31:0] com_0, si, ni, com1;
 	
@@ -145,18 +120,24 @@ module sha_core(
 			reg_in <= 320'd0;
 			reg_ac <= 1'b0;
 		end
-		else begin
-			reg_in[319:288] 	<= updated_as;
-			reg_ac 				<= updated_ac;
-			reg_in[287:256] 	<= updated_b;
-			reg_in[255:224] 	<= updated_c;
-			reg_in[223:192] 	<= updated_e;
-			reg_in[191:160] 	<= updated_f;
-			reg_in[159:128] 	<= updated_g;
-			reg_in[127:96] 	<= updated_s;
-			reg_in[95:64] 		<= updated_n;
-			reg_in[63:32] 		<= updated_p;
-			reg_in[31:0] 		<= updated_q;
+		else if(counter_reg >= 1) begin
+			if(counter_reg == 1) begin
+				reg_in[255:224] 	<= h3;	// d0
+				reg_in[159:128]	<= h7;	// h0
+			end
+			else begin
+				reg_in[319:288] 	<= (counter_reg == 2) ? h0 : as;		// as
+				reg_ac 				<= (counter_reg == 2) ? 1'b0 : ac;	// ac
+				reg_in[287:256] 	<= (counter_reg == 2) ? h1 : at;		// b
+				reg_in[255:224] 	<= (counter_reg == 2) ? h2 : reg_in[287:256];	// c
+				reg_in[223:192] 	<= (counter_reg == 2) ? h4 : ei;		// e
+				reg_in[191:160] 	<= (counter_reg == 2) ? h5 : reg_in[223:192];	// f
+				reg_in[159:128] 	<= (counter_reg == 2) ? h6 : reg_in[287:256];	// g
+				reg_in[127:96] 	<= (counter_reg == 2) ? S0 : si;		// s
+				reg_in[95:64] 		<= (counter_reg == 2) ? N0 : ni; // n
+				reg_in[63:32] 		<= tmp2 + tmp3;	// p
+				reg_in[31:0] 		<= tmp4 + tmp5;	// q
+			end
 		end
 	end
 
@@ -173,8 +154,13 @@ module sha_core(
 		if (~clr) begin
 			counter_reg <= 7'd0;
 			valid <= 1'b0;
+			buffer <= 512'b0;
 		end
 		else begin
+			if (write_en) begin
+				buffer <= message;
+			end
+			
 			if(counter_reg == 65) begin
 				hashvalue[159:128] <= h3 + reg_in[255:224];		// d
 				hashvalue[31:0] <= h7 + reg_in[159:128];			// g
@@ -188,15 +174,20 @@ module sha_core(
 				hashvalue[95:64] 		<= h5 + reg_in[191:160];	// f
 				hashvalue[63:32] 		<= h6 + reg_in[159:128];	// g
 			end
+			if (counter_reg < 67) begin
 				counter_reg <= counter_reg + 1'b1;
+			end
+			else begin
+				counter_reg <= 7'd0;
+				valid <= 1'b0;
+			end
 		end
 	end
 	
 	assign K_i = (counter_reg==0)? 0: K;
 	
-	assign counter_w_reg = (counter_reg < 7'd65) ? counter_reg - 1'b1 :  
-                       (counter_reg == 7'd65) ? 1'b0 :  
-                       (counter_reg == 7'd66) ? 1'b0 : counter_reg - 7'd66;
+	assign counter_w_reg = (counter_reg <= 7'd64) ? counter_reg - 1'b1 :  6'd63;
+									
 
 	always @(*) begin
 		case(counter_w_reg)
