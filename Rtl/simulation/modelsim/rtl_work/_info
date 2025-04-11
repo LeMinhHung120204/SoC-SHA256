@@ -1,0 +1,166 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Hung\Year3\HK2\CE433\SoC-SHA256\Rtl\simulation\modelsim
+vch
+I5IE^P4O7XCkEA7V85CQWQ1
+VIRC258`T?faR`;V[?lTh[1
+Z1 dC:\Hung\Year3\HK2\CE433\SoC-SHA256\Rtl\simulation\modelsim
+Z2 w1744129349
+Z3 8C:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl/sha_core.v
+Z4 FC:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl/sha_core.v
+L0 15
+Z5 OV;L;10.1d;51
+r1
+31
+Z6 !s108 1744297330.275000
+Z7 !s107 C:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl/sha_core.v|
+Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl|C:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl/sha_core.v|
+Z9 o-vlog01compat -work work -O0
+Z10 !s92 -vlog01compat -work work +incdir+C:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl -O0
+!i10b 1
+!s100 1QmWDQY4S4b@2VmVi<J<e1
+!s85 0
+!s101 -O0
+vcsa
+I5VkQ;TD`fLQ`AAS[gCmGP0
+Vej>AL3_DG@=RYDTd^i_3;2
+R1
+Z11 w1742307319
+Z12 8C:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl/csa.v
+Z13 FC:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl/csa.v
+L0 1
+R5
+r1
+31
+Z14 !s108 1744297330.190000
+Z15 !s107 C:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl/csa.v|
+Z16 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl|C:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl/csa.v|
+R9
+R10
+!i10b 1
+!s100 LakLeBIjAHGYY4ZKlHSBB2
+!s85 0
+!s101 -O0
+vFA3
+ITP03YYb:7>aeYf]Bg^H>=0
+V[znFV86_]B6Jf0BEJhS6H1
+R1
+R11
+R12
+R13
+L0 22
+R5
+r1
+31
+R14
+R15
+R16
+R9
+R10
+n@f@a3
+!i10b 1
+!s100 ej=m7JbeZ8QY]<bg3[3]e1
+!s85 0
+!s101 -O0
+vmaj
+IK5OcA;lR9iOQUG=IHVMZ=2
+V[WGD13QJ>KoFMTCl31LTU3
+R1
+R2
+R3
+R4
+L0 22
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!i10b 1
+!s100 fTnJ]ThCeJM4_b[2D<LD`3
+!s85 0
+!s101 -O0
+vsha_core
+IS2K^:zQJ>jE23nD8hGKMP2
+V9@OS?zaN;Bh7_F32SHL611
+R1
+R2
+R3
+R4
+L0 29
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!i10b 1
+!s100 MjCZAc`2R3:EV:GL1b]h12
+!s85 0
+!s101 -O0
+vsum_0
+I:kA>YAHbTehQn5A;5LVWk2
+VKTgEoRHThb5hLmhj5<NoK3
+R1
+R2
+R3
+R4
+L0 1
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!i10b 1
+!s100 JmcaebJfDYBQQmQ>T6g[z3
+!s85 0
+!s101 -O0
+vsum_1
+IR3RLlUJdSPcm3O0EVzSRQ3
+VbaQGKG:G_QedT57R??z?53
+R1
+R2
+R3
+R4
+L0 8
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!i10b 1
+!s100 ]WC6<fMlzd>ZeCgekIUXE2
+!s85 0
+!s101 -O0
+vtest
+!i10b 1
+!s100 ?KdaF0z:]V`W<z3g=6ZkH2
+IEOn7W<iD;ZMTbO^7jAcAE1
+Vk<3<[f=78GX=_HO53D;7>3
+R1
+w1744128896
+8C:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl/test.v
+FC:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl/test.v
+L0 3
+R5
+r1
+!s85 0
+31
+!s108 1744297330.371000
+!s107 C:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl/test.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl|C:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl/test.v|
+!s101 -O0
+R9
+R10
