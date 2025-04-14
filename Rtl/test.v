@@ -7,10 +7,7 @@ module test();
 	reg start;
 	reg [511:0] data_in;
 	wire [255:0] hashvalue;
-	wire [319:0] regtest;
-	wire [6:0]	countertest;
 	wire valid;
-	wire [31:0] variable, variable2, variable3, variable4, variable5, variable6;
 
 	// SHA Core wrapper: Bạn cần wrapper xử lý buffer và start từ 4 lần ghi
 	sha_core dut (
@@ -19,15 +16,7 @@ module test();
 	.start			(start),
 	.message			(data_in),
 	.hashvalue		(hashvalue),
-	.valid			(valid),
-	.regtest			(regtest),
-	.countertest	(countertest),
-	.variable		(variable),
-	.variable2		(variable2),
-	.variable3		(variable3),
-	.variable4		(variable4),
-	.variable5		(variable5),
-	.variable6		(variable6)
+	.valid			(valid)
 	);
 
 	// Clock generator: 10ns period

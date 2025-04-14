@@ -1,5 +1,5 @@
 Flow report for sha256
-Sat Apr 12 01:00:12 2025
+Tue Apr 15 01:51:37 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Sat Apr 12 01:00:12 2025           ;
+; Flow Status                        ; Successful - Tue Apr 15 01:51:37 2025           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; sha256                                          ;
 ; Top-level Entity Name              ; sha_core                                        ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 2,284                                           ;
-;     Total combinational functions  ; 2,280                                           ;
-;     Dedicated logic registers      ; 1,121                                           ;
-; Total registers                    ; 1121                                            ;
-; Total pins                         ; 1,291                                           ;
+; Total logic elements               ; 2,530                                           ;
+;     Total combinational functions  ; 2,530                                           ;
+;     Dedicated logic registers      ; 871                                             ;
+; Total registers                    ; 871                                             ;
+; Total pins                         ; 772                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/12/2025 01:00:07 ;
+; Start date & time ; 04/15/2025 01:51:32 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; sha256              ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +--------------------------------------+-------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                         ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+-------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 9413549329963.174439440713796 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 9413549329963.174465669208048 ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                            ; --            ; --          ; test           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; On                            ; --            ; --          ; eda_simulation ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; test                          ; --            ; --          ; eda_simulation ;
@@ -101,7 +101,7 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 4613 MB             ; 00:00:05                           ;
+; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 4614 MB             ; 00:00:05                           ;
 ; Total                ; 00:00:05     ; --                      ; --                  ; 00:00:05                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 

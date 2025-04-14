@@ -2,13 +2,8 @@ module sha_core(
 	input clk, clr, start,
 	input [511:0] message,
 	//input [127:0] data_in,
-	output reg [255:0] hashvalue,
-	output reg valid,
-	
-	// debug
-	output [319:0] regtest,
-	output [6:0]	countertest,
-	output [31:0]	variable, variable2, variable3, variable4, variable5, variable6
+	output [255:0] hashvalue,
+	output reg valid
 );
 	reg [6:0]	counter_reg;
 	reg [31:0]	K, reg_ac;
@@ -122,7 +117,7 @@ module sha_core(
 	always @(posedge clk or negedge clr) begin
 		if(~clr) begin
 			reg_in <= 320'd0;
-			reg_ac <= 1'b0;
+			reg_ac <= 32'd0;
 		end
 		else begin
 			if(counter_reg == 0) begin
@@ -136,7 +131,7 @@ module sha_core(
 				reg_in[255:224] 	<= (counter_reg == 1) ? h2		: reg_in[287:256];	// c
 				reg_in[223:192] 	<= (counter_reg == 1) ? h4		: ei;		// e
 				reg_in[191:160] 	<= (counter_reg == 1) ? h5		: reg_in[223:192];	// f
-				reg_in[159:128] 	<= (counter_reg == 1) ? h6		: reg_in[287:256];	// g
+				reg_in[159:128] 	<= (counter_reg == 1) ? h6		: reg_in[191:160];	// g
 				reg_in[127:96] 	<= (counter_reg == 1) ? S0		: si;		// s
 				reg_in[95:64] 		<= (counter_reg == 1) ? N0		: ni; // n
 				reg_in[63:32] 		<= tmp2 + tmp3;	// p
@@ -151,21 +146,10 @@ module sha_core(
 		if (~clr) begin
 			counter_reg	<= 7'd0;
 			valid			<= 1'b0;
-			hashvalue	<= 256'd0;
 		end
 		else begin
-			if(counter_reg == 64) begin
-				hashvalue[159:128]	<= h3 + reg_in[255:224];	// d
-				hashvalue[31:0]		<= h7 + reg_in[159:128];	// g
-			end 
-			else if(counter_reg == 65) begin
+			if(counter_reg == 65) begin
 				valid <= 1'b1;
-				hashvalue[255:224] 	<= h0 + at;						// a
-				hashvalue[223:192] 	<= h1 + reg_in[287:256];	// b
-				hashvalue[191:160] 	<= h2 + reg_in[255:224];	// c
-				hashvalue[127:96] 	<= h4 + reg_in[223:192];	// e
-				hashvalue[95:64] 		<= h5 + reg_in[191:160];	// f
-				hashvalue[63:32] 		<= h6 + reg_in[159:128];	// g
 			end
 			if (counter_reg < 66) begin
 				if(counter_reg == 0) begin
@@ -258,14 +242,18 @@ module sha_core(
 	
 	// ======================================================================
 	// debug
-	assign regtest = reg_in;
-	assign countertest = counter_reg;
-	assign variable = reg_in[287:256]; // b
-	assign variable2 = reg_in[255:224]; // c
-	assign variable3 = reg_in[223:192]; // e
-	assign variable4 = reg_in[191:160]; // f
-	assign variable5 = reg_in[159:128]; // g
-	assign variable6 = N0; // s
+	assign hashvalue[159:128] = (counter_reg < 65)  ? 32'd0 :
+										(counter_reg == 65) ? (h3 + reg_in[255:224]) : hashvalue[159:128];     // d
+	assign hashvalue[31:0] = (counter_reg < 65)  ? 32'd0 :
+									(counter_reg == 65) ? (h7 + reg_in[159:128]) : hashvalue[31:0];        // g
+	assign hashvalue[255:224] = (counter_reg == 66) ? h0 + at : 0;                   // a
+	assign hashvalue[223:192] = (counter_reg == 66) ? h1 + reg_in[287:256] : 0;     // b
+	assign hashvalue[191:160] = (counter_reg == 66) ? h2 + reg_in[255:224] : 0;     // c
+	assign hashvalue[127:96]  = (counter_reg == 66) ? h4 + reg_in[223:192] : 0;     // e
+	assign hashvalue[95:64]   = (counter_reg == 66) ? h5 + reg_in[191:160] : 0;     // f
+	assign hashvalue[63:32]   = (counter_reg == 66) ? h6 + reg_in[159:128] : 0;     // g
+
+
 	// ======================================================================
 endmodule 
 
