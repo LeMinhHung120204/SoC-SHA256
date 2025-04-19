@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sha256
-Tue Apr 15 01:51:37 2025
+Sat Apr 19 20:49:31 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,14 +13,13 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Port Connectivity Checks: "csa:csa0|fulladder:CSA_STAGE[31].fa"
- 13. Port Connectivity Checks: "ch:ch0"
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "sha_core:core|csa:csa0|fulladder:CSA_STAGE[31].fa"
+ 12. Port Connectivity Checks: "sha_core:core|ch:ch0"
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -46,16 +45,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 15 01:51:37 2025           ;
+; Analysis & Synthesis Status        ; Successful - Sat Apr 19 20:49:31 2025           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; sha256                                          ;
-; Top-level Entity Name              ; sha_core                                        ;
+; Top-level Entity Name              ; wrapper                                         ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 2,530                                           ;
-;     Total combinational functions  ; 2,530                                           ;
-;     Dedicated logic registers      ; 871                                             ;
-; Total registers                    ; 871                                             ;
-; Total pins                         ; 772                                             ;
+; Total logic elements               ; 3,397                                           ;
+;     Total combinational functions  ; 2,881                                           ;
+;     Dedicated logic registers      ; 1,736                                           ;
+; Total registers                    ; 1736                                            ;
+; Total pins                         ; 74                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -69,7 +68,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C35F672C6       ;                    ;
-; Top-level entity name                                                      ; sha_core           ; sha256             ;
+; Top-level entity name                                                      ; wrapper            ; sha256             ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -148,15 +147,21 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 16     ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -164,12 +169,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------+---------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                      ; Library ;
 +----------------------------------+-----------------+------------------------+---------------------------------------------------+---------+
-; csa.v                            ; yes             ; User Verilog HDL File  ; C:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl/csa.v      ;         ;
-; sha_core.v                       ; yes             ; User Verilog HDL File  ; C:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl/sha_core.v ;         ;
-; sum_1.v                          ; yes             ; User Verilog HDL File  ; C:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl/sum_1.v    ;         ;
-; sum_0.v                          ; yes             ; User Verilog HDL File  ; C:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl/sum_0.v    ;         ;
-; ch.v                             ; yes             ; User Verilog HDL File  ; C:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl/ch.v       ;         ;
-; maj.v                            ; yes             ; User Verilog HDL File  ; C:/Hung/Year3/HK2/CE433/SoC-SHA256/Rtl/maj.v      ;         ;
+; wrapper.v                        ; yes             ; User Verilog HDL File  ; C:/Hung/Year3/HK2/CE433/SoC-SHA256/rtl/wrapper.v  ;         ;
+; sum_1.v                          ; yes             ; User Verilog HDL File  ; C:/Hung/Year3/HK2/CE433/SoC-SHA256/rtl/sum_1.v    ;         ;
+; sum_0.v                          ; yes             ; User Verilog HDL File  ; C:/Hung/Year3/HK2/CE433/SoC-SHA256/rtl/sum_0.v    ;         ;
+; sha_core.v                       ; yes             ; User Verilog HDL File  ; C:/Hung/Year3/HK2/CE433/SoC-SHA256/rtl/sha_core.v ;         ;
+; maj.v                            ; yes             ; User Verilog HDL File  ; C:/Hung/Year3/HK2/CE433/SoC-SHA256/rtl/maj.v      ;         ;
+; csa.v                            ; yes             ; User Verilog HDL File  ; C:/Hung/Year3/HK2/CE433/SoC-SHA256/rtl/csa.v      ;         ;
+; ch.v                             ; yes             ; User Verilog HDL File  ; C:/Hung/Year3/HK2/CE433/SoC-SHA256/rtl/ch.v       ;         ;
 +----------------------------------+-----------------+------------------------+---------------------------------------------------+---------+
 
 
@@ -178,282 +184,209 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 2,530 ;
+; Estimated Total logic elements              ; 3,397 ;
 ;                                             ;       ;
-; Total combinational functions               ; 2530  ;
+; Total combinational functions               ; 2881  ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 1182  ;
-;     -- 3 input functions                    ; 769   ;
-;     -- <=2 input functions                  ; 579   ;
+;     -- 4 input functions                    ; 1685  ;
+;     -- 3 input functions                    ; 804   ;
+;     -- <=2 input functions                  ; 392   ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 2032  ;
+;     -- normal mode                          ; 2383  ;
 ;     -- arithmetic mode                      ; 498   ;
 ;                                             ;       ;
-; Total registers                             ; 871   ;
-;     -- Dedicated logic registers            ; 871   ;
+; Total registers                             ; 1736  ;
+;     -- Dedicated logic registers            ; 1736  ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 772   ;
+; I/O pins                                    ; 74    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 871   ;
-; Total fan-out                               ; 12043 ;
-; Average fan-out                             ; 2.89  ;
+; Maximum fan-out node                        ; iClk  ;
+; Maximum fan-out                             ; 1736  ;
+; Total fan-out                               ; 17018 ;
+; Average fan-out                             ; 3.63  ;
 +---------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                           ;
-+------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
-; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                           ; Library Name ;
-+------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
-; |sha_core                          ; 2530 (2068)       ; 871 (871)    ; 0           ; 0            ; 0       ; 0         ; 772  ; 0            ; |sha_core                                     ; work         ;
-;    |ch:ch1|                        ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|ch:ch1                              ; work         ;
-;    |csa:csa0|                      ; 62 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0                            ; work         ;
-;       |fulladder:CSA_STAGE[0].fa|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[0].fa  ; work         ;
-;       |fulladder:CSA_STAGE[10].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[10].fa ; work         ;
-;       |fulladder:CSA_STAGE[11].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[11].fa ; work         ;
-;       |fulladder:CSA_STAGE[12].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[12].fa ; work         ;
-;       |fulladder:CSA_STAGE[13].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[13].fa ; work         ;
-;       |fulladder:CSA_STAGE[14].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[14].fa ; work         ;
-;       |fulladder:CSA_STAGE[15].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[15].fa ; work         ;
-;       |fulladder:CSA_STAGE[16].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[16].fa ; work         ;
-;       |fulladder:CSA_STAGE[17].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[17].fa ; work         ;
-;       |fulladder:CSA_STAGE[18].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[18].fa ; work         ;
-;       |fulladder:CSA_STAGE[19].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[19].fa ; work         ;
-;       |fulladder:CSA_STAGE[1].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[1].fa  ; work         ;
-;       |fulladder:CSA_STAGE[20].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[20].fa ; work         ;
-;       |fulladder:CSA_STAGE[21].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[21].fa ; work         ;
-;       |fulladder:CSA_STAGE[22].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[22].fa ; work         ;
-;       |fulladder:CSA_STAGE[23].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[23].fa ; work         ;
-;       |fulladder:CSA_STAGE[24].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[24].fa ; work         ;
-;       |fulladder:CSA_STAGE[25].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[25].fa ; work         ;
-;       |fulladder:CSA_STAGE[26].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[26].fa ; work         ;
-;       |fulladder:CSA_STAGE[27].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[27].fa ; work         ;
-;       |fulladder:CSA_STAGE[28].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[28].fa ; work         ;
-;       |fulladder:CSA_STAGE[29].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[29].fa ; work         ;
-;       |fulladder:CSA_STAGE[2].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[2].fa  ; work         ;
-;       |fulladder:CSA_STAGE[30].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[30].fa ; work         ;
-;       |fulladder:CSA_STAGE[31].fa| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[31].fa ; work         ;
-;       |fulladder:CSA_STAGE[3].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[3].fa  ; work         ;
-;       |fulladder:CSA_STAGE[4].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[4].fa  ; work         ;
-;       |fulladder:CSA_STAGE[5].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[5].fa  ; work         ;
-;       |fulladder:CSA_STAGE[6].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[6].fa  ; work         ;
-;       |fulladder:CSA_STAGE[7].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[7].fa  ; work         ;
-;       |fulladder:CSA_STAGE[8].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[8].fa  ; work         ;
-;       |fulladder:CSA_STAGE[9].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa0|fulladder:CSA_STAGE[9].fa  ; work         ;
-;    |csa:csa1|                      ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1                            ; work         ;
-;       |fulladder:CSA_STAGE[0].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[0].fa  ; work         ;
-;       |fulladder:CSA_STAGE[10].fa| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[10].fa ; work         ;
-;       |fulladder:CSA_STAGE[11].fa| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[11].fa ; work         ;
-;       |fulladder:CSA_STAGE[12].fa| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[12].fa ; work         ;
-;       |fulladder:CSA_STAGE[13].fa| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[13].fa ; work         ;
-;       |fulladder:CSA_STAGE[14].fa| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[14].fa ; work         ;
-;       |fulladder:CSA_STAGE[15].fa| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[15].fa ; work         ;
-;       |fulladder:CSA_STAGE[16].fa| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[16].fa ; work         ;
-;       |fulladder:CSA_STAGE[17].fa| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[17].fa ; work         ;
-;       |fulladder:CSA_STAGE[18].fa| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[18].fa ; work         ;
-;       |fulladder:CSA_STAGE[19].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[19].fa ; work         ;
-;       |fulladder:CSA_STAGE[1].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[1].fa  ; work         ;
-;       |fulladder:CSA_STAGE[20].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[20].fa ; work         ;
-;       |fulladder:CSA_STAGE[21].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[21].fa ; work         ;
-;       |fulladder:CSA_STAGE[22].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[22].fa ; work         ;
-;       |fulladder:CSA_STAGE[23].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[23].fa ; work         ;
-;       |fulladder:CSA_STAGE[24].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[24].fa ; work         ;
-;       |fulladder:CSA_STAGE[25].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[25].fa ; work         ;
-;       |fulladder:CSA_STAGE[26].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[26].fa ; work         ;
-;       |fulladder:CSA_STAGE[27].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[27].fa ; work         ;
-;       |fulladder:CSA_STAGE[28].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[28].fa ; work         ;
-;       |fulladder:CSA_STAGE[29].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[29].fa ; work         ;
-;       |fulladder:CSA_STAGE[2].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[2].fa  ; work         ;
-;       |fulladder:CSA_STAGE[30].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[30].fa ; work         ;
-;       |fulladder:CSA_STAGE[31].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[31].fa ; work         ;
-;       |fulladder:CSA_STAGE[3].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[3].fa  ; work         ;
-;       |fulladder:CSA_STAGE[4].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[4].fa  ; work         ;
-;       |fulladder:CSA_STAGE[5].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[5].fa  ; work         ;
-;       |fulladder:CSA_STAGE[6].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[6].fa  ; work         ;
-;       |fulladder:CSA_STAGE[7].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[7].fa  ; work         ;
-;       |fulladder:CSA_STAGE[8].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[8].fa  ; work         ;
-;       |fulladder:CSA_STAGE[9].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa1|fulladder:CSA_STAGE[9].fa  ; work         ;
-;    |csa:csa2|                      ; 63 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2                            ; work         ;
-;       |fulladder:CSA_STAGE[0].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[0].fa  ; work         ;
-;       |fulladder:CSA_STAGE[10].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[10].fa ; work         ;
-;       |fulladder:CSA_STAGE[11].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[11].fa ; work         ;
-;       |fulladder:CSA_STAGE[12].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[12].fa ; work         ;
-;       |fulladder:CSA_STAGE[13].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[13].fa ; work         ;
-;       |fulladder:CSA_STAGE[14].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[14].fa ; work         ;
-;       |fulladder:CSA_STAGE[15].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[15].fa ; work         ;
-;       |fulladder:CSA_STAGE[16].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[16].fa ; work         ;
-;       |fulladder:CSA_STAGE[17].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[17].fa ; work         ;
-;       |fulladder:CSA_STAGE[18].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[18].fa ; work         ;
-;       |fulladder:CSA_STAGE[19].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[19].fa ; work         ;
-;       |fulladder:CSA_STAGE[1].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[1].fa  ; work         ;
-;       |fulladder:CSA_STAGE[20].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[20].fa ; work         ;
-;       |fulladder:CSA_STAGE[21].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[21].fa ; work         ;
-;       |fulladder:CSA_STAGE[22].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[22].fa ; work         ;
-;       |fulladder:CSA_STAGE[23].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[23].fa ; work         ;
-;       |fulladder:CSA_STAGE[24].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[24].fa ; work         ;
-;       |fulladder:CSA_STAGE[25].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[25].fa ; work         ;
-;       |fulladder:CSA_STAGE[26].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[26].fa ; work         ;
-;       |fulladder:CSA_STAGE[27].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[27].fa ; work         ;
-;       |fulladder:CSA_STAGE[28].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[28].fa ; work         ;
-;       |fulladder:CSA_STAGE[29].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[29].fa ; work         ;
-;       |fulladder:CSA_STAGE[2].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[2].fa  ; work         ;
-;       |fulladder:CSA_STAGE[30].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[30].fa ; work         ;
-;       |fulladder:CSA_STAGE[31].fa| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[31].fa ; work         ;
-;       |fulladder:CSA_STAGE[3].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[3].fa  ; work         ;
-;       |fulladder:CSA_STAGE[4].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[4].fa  ; work         ;
-;       |fulladder:CSA_STAGE[5].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[5].fa  ; work         ;
-;       |fulladder:CSA_STAGE[6].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[6].fa  ; work         ;
-;       |fulladder:CSA_STAGE[7].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[7].fa  ; work         ;
-;       |fulladder:CSA_STAGE[8].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[8].fa  ; work         ;
-;       |fulladder:CSA_STAGE[9].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa2|fulladder:CSA_STAGE[9].fa  ; work         ;
-;    |csa:csa3|                      ; 65 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3                            ; work         ;
-;       |fulladder:CSA_STAGE[0].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[0].fa  ; work         ;
-;       |fulladder:CSA_STAGE[10].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[10].fa ; work         ;
-;       |fulladder:CSA_STAGE[11].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[11].fa ; work         ;
-;       |fulladder:CSA_STAGE[12].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[12].fa ; work         ;
-;       |fulladder:CSA_STAGE[13].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[13].fa ; work         ;
-;       |fulladder:CSA_STAGE[14].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[14].fa ; work         ;
-;       |fulladder:CSA_STAGE[15].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[15].fa ; work         ;
-;       |fulladder:CSA_STAGE[16].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[16].fa ; work         ;
-;       |fulladder:CSA_STAGE[17].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[17].fa ; work         ;
-;       |fulladder:CSA_STAGE[18].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[18].fa ; work         ;
-;       |fulladder:CSA_STAGE[19].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[19].fa ; work         ;
-;       |fulladder:CSA_STAGE[1].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[1].fa  ; work         ;
-;       |fulladder:CSA_STAGE[20].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[20].fa ; work         ;
-;       |fulladder:CSA_STAGE[21].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[21].fa ; work         ;
-;       |fulladder:CSA_STAGE[22].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[22].fa ; work         ;
-;       |fulladder:CSA_STAGE[23].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[23].fa ; work         ;
-;       |fulladder:CSA_STAGE[24].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[24].fa ; work         ;
-;       |fulladder:CSA_STAGE[25].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[25].fa ; work         ;
-;       |fulladder:CSA_STAGE[26].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[26].fa ; work         ;
-;       |fulladder:CSA_STAGE[27].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[27].fa ; work         ;
-;       |fulladder:CSA_STAGE[28].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[28].fa ; work         ;
-;       |fulladder:CSA_STAGE[29].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[29].fa ; work         ;
-;       |fulladder:CSA_STAGE[2].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[2].fa  ; work         ;
-;       |fulladder:CSA_STAGE[30].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[30].fa ; work         ;
-;       |fulladder:CSA_STAGE[31].fa| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[31].fa ; work         ;
-;       |fulladder:CSA_STAGE[3].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[3].fa  ; work         ;
-;       |fulladder:CSA_STAGE[4].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[4].fa  ; work         ;
-;       |fulladder:CSA_STAGE[5].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[5].fa  ; work         ;
-;       |fulladder:CSA_STAGE[6].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[6].fa  ; work         ;
-;       |fulladder:CSA_STAGE[7].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[7].fa  ; work         ;
-;       |fulladder:CSA_STAGE[8].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[8].fa  ; work         ;
-;       |fulladder:CSA_STAGE[9].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa3|fulladder:CSA_STAGE[9].fa  ; work         ;
-;    |csa:csa4|                      ; 64 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4                            ; work         ;
-;       |fulladder:CSA_STAGE[0].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[0].fa  ; work         ;
-;       |fulladder:CSA_STAGE[10].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[10].fa ; work         ;
-;       |fulladder:CSA_STAGE[11].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[11].fa ; work         ;
-;       |fulladder:CSA_STAGE[12].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[12].fa ; work         ;
-;       |fulladder:CSA_STAGE[13].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[13].fa ; work         ;
-;       |fulladder:CSA_STAGE[14].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[14].fa ; work         ;
-;       |fulladder:CSA_STAGE[15].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[15].fa ; work         ;
-;       |fulladder:CSA_STAGE[16].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[16].fa ; work         ;
-;       |fulladder:CSA_STAGE[17].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[17].fa ; work         ;
-;       |fulladder:CSA_STAGE[18].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[18].fa ; work         ;
-;       |fulladder:CSA_STAGE[19].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[19].fa ; work         ;
-;       |fulladder:CSA_STAGE[1].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[1].fa  ; work         ;
-;       |fulladder:CSA_STAGE[20].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[20].fa ; work         ;
-;       |fulladder:CSA_STAGE[21].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[21].fa ; work         ;
-;       |fulladder:CSA_STAGE[22].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[22].fa ; work         ;
-;       |fulladder:CSA_STAGE[23].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[23].fa ; work         ;
-;       |fulladder:CSA_STAGE[24].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[24].fa ; work         ;
-;       |fulladder:CSA_STAGE[25].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[25].fa ; work         ;
-;       |fulladder:CSA_STAGE[26].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[26].fa ; work         ;
-;       |fulladder:CSA_STAGE[27].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[27].fa ; work         ;
-;       |fulladder:CSA_STAGE[28].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[28].fa ; work         ;
-;       |fulladder:CSA_STAGE[29].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[29].fa ; work         ;
-;       |fulladder:CSA_STAGE[2].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[2].fa  ; work         ;
-;       |fulladder:CSA_STAGE[30].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[30].fa ; work         ;
-;       |fulladder:CSA_STAGE[31].fa| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[31].fa ; work         ;
-;       |fulladder:CSA_STAGE[3].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[3].fa  ; work         ;
-;       |fulladder:CSA_STAGE[4].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[4].fa  ; work         ;
-;       |fulladder:CSA_STAGE[5].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[5].fa  ; work         ;
-;       |fulladder:CSA_STAGE[6].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[6].fa  ; work         ;
-;       |fulladder:CSA_STAGE[7].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[7].fa  ; work         ;
-;       |fulladder:CSA_STAGE[8].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[8].fa  ; work         ;
-;       |fulladder:CSA_STAGE[9].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|csa:csa4|fulladder:CSA_STAGE[9].fa  ; work         ;
-;    |maj:maj0|                      ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|maj:maj0                            ; work         ;
-;    |sum_0:sum0_0|                  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|sum_0:sum0_0                        ; work         ;
-;    |sum_1:sum1_1|                  ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha_core|sum_1:sum1_1                        ; work         ;
-+------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                           ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                        ; Library Name ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------+--------------+
+; |wrapper                              ; 2881 (727)        ; 1736 (802)   ; 0           ; 0            ; 0       ; 0         ; 74   ; 0            ; |wrapper                                                   ; work         ;
+;    |sha_core:core|                    ; 2154 (1691)       ; 934 (934)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core                                     ; work         ;
+;       |ch:ch1|                        ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|ch:ch1                              ; work         ;
+;       |csa:csa0|                      ; 63 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0                            ; work         ;
+;          |fulladder:CSA_STAGE[0].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[0].fa  ; work         ;
+;          |fulladder:CSA_STAGE[10].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[10].fa ; work         ;
+;          |fulladder:CSA_STAGE[11].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[11].fa ; work         ;
+;          |fulladder:CSA_STAGE[12].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[12].fa ; work         ;
+;          |fulladder:CSA_STAGE[13].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[13].fa ; work         ;
+;          |fulladder:CSA_STAGE[14].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[14].fa ; work         ;
+;          |fulladder:CSA_STAGE[15].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[15].fa ; work         ;
+;          |fulladder:CSA_STAGE[16].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[16].fa ; work         ;
+;          |fulladder:CSA_STAGE[17].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[17].fa ; work         ;
+;          |fulladder:CSA_STAGE[18].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[18].fa ; work         ;
+;          |fulladder:CSA_STAGE[19].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[19].fa ; work         ;
+;          |fulladder:CSA_STAGE[1].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[1].fa  ; work         ;
+;          |fulladder:CSA_STAGE[20].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[20].fa ; work         ;
+;          |fulladder:CSA_STAGE[21].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[21].fa ; work         ;
+;          |fulladder:CSA_STAGE[22].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[22].fa ; work         ;
+;          |fulladder:CSA_STAGE[23].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[23].fa ; work         ;
+;          |fulladder:CSA_STAGE[24].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[24].fa ; work         ;
+;          |fulladder:CSA_STAGE[25].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[25].fa ; work         ;
+;          |fulladder:CSA_STAGE[26].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[26].fa ; work         ;
+;          |fulladder:CSA_STAGE[27].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[27].fa ; work         ;
+;          |fulladder:CSA_STAGE[28].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[28].fa ; work         ;
+;          |fulladder:CSA_STAGE[29].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[29].fa ; work         ;
+;          |fulladder:CSA_STAGE[2].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[2].fa  ; work         ;
+;          |fulladder:CSA_STAGE[30].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[30].fa ; work         ;
+;          |fulladder:CSA_STAGE[31].fa| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[31].fa ; work         ;
+;          |fulladder:CSA_STAGE[3].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[3].fa  ; work         ;
+;          |fulladder:CSA_STAGE[4].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[4].fa  ; work         ;
+;          |fulladder:CSA_STAGE[5].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[5].fa  ; work         ;
+;          |fulladder:CSA_STAGE[6].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[6].fa  ; work         ;
+;          |fulladder:CSA_STAGE[7].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[7].fa  ; work         ;
+;          |fulladder:CSA_STAGE[8].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[8].fa  ; work         ;
+;          |fulladder:CSA_STAGE[9].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa0|fulladder:CSA_STAGE[9].fa  ; work         ;
+;       |csa:csa1|                      ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1                            ; work         ;
+;          |fulladder:CSA_STAGE[0].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[0].fa  ; work         ;
+;          |fulladder:CSA_STAGE[10].fa| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[10].fa ; work         ;
+;          |fulladder:CSA_STAGE[11].fa| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[11].fa ; work         ;
+;          |fulladder:CSA_STAGE[12].fa| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[12].fa ; work         ;
+;          |fulladder:CSA_STAGE[13].fa| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[13].fa ; work         ;
+;          |fulladder:CSA_STAGE[14].fa| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[14].fa ; work         ;
+;          |fulladder:CSA_STAGE[15].fa| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[15].fa ; work         ;
+;          |fulladder:CSA_STAGE[16].fa| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[16].fa ; work         ;
+;          |fulladder:CSA_STAGE[17].fa| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[17].fa ; work         ;
+;          |fulladder:CSA_STAGE[18].fa| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[18].fa ; work         ;
+;          |fulladder:CSA_STAGE[19].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[19].fa ; work         ;
+;          |fulladder:CSA_STAGE[1].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[1].fa  ; work         ;
+;          |fulladder:CSA_STAGE[20].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[20].fa ; work         ;
+;          |fulladder:CSA_STAGE[21].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[21].fa ; work         ;
+;          |fulladder:CSA_STAGE[22].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[22].fa ; work         ;
+;          |fulladder:CSA_STAGE[23].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[23].fa ; work         ;
+;          |fulladder:CSA_STAGE[24].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[24].fa ; work         ;
+;          |fulladder:CSA_STAGE[25].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[25].fa ; work         ;
+;          |fulladder:CSA_STAGE[26].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[26].fa ; work         ;
+;          |fulladder:CSA_STAGE[27].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[27].fa ; work         ;
+;          |fulladder:CSA_STAGE[28].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[28].fa ; work         ;
+;          |fulladder:CSA_STAGE[29].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[29].fa ; work         ;
+;          |fulladder:CSA_STAGE[2].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[2].fa  ; work         ;
+;          |fulladder:CSA_STAGE[30].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[30].fa ; work         ;
+;          |fulladder:CSA_STAGE[31].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[31].fa ; work         ;
+;          |fulladder:CSA_STAGE[3].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[3].fa  ; work         ;
+;          |fulladder:CSA_STAGE[4].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[4].fa  ; work         ;
+;          |fulladder:CSA_STAGE[5].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[5].fa  ; work         ;
+;          |fulladder:CSA_STAGE[6].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[6].fa  ; work         ;
+;          |fulladder:CSA_STAGE[7].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[7].fa  ; work         ;
+;          |fulladder:CSA_STAGE[8].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[8].fa  ; work         ;
+;          |fulladder:CSA_STAGE[9].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa1|fulladder:CSA_STAGE[9].fa  ; work         ;
+;       |csa:csa2|                      ; 62 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2                            ; work         ;
+;          |fulladder:CSA_STAGE[0].fa|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[0].fa  ; work         ;
+;          |fulladder:CSA_STAGE[10].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[10].fa ; work         ;
+;          |fulladder:CSA_STAGE[11].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[11].fa ; work         ;
+;          |fulladder:CSA_STAGE[12].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[12].fa ; work         ;
+;          |fulladder:CSA_STAGE[13].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[13].fa ; work         ;
+;          |fulladder:CSA_STAGE[14].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[14].fa ; work         ;
+;          |fulladder:CSA_STAGE[15].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[15].fa ; work         ;
+;          |fulladder:CSA_STAGE[16].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[16].fa ; work         ;
+;          |fulladder:CSA_STAGE[17].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[17].fa ; work         ;
+;          |fulladder:CSA_STAGE[18].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[18].fa ; work         ;
+;          |fulladder:CSA_STAGE[19].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[19].fa ; work         ;
+;          |fulladder:CSA_STAGE[1].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[1].fa  ; work         ;
+;          |fulladder:CSA_STAGE[20].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[20].fa ; work         ;
+;          |fulladder:CSA_STAGE[21].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[21].fa ; work         ;
+;          |fulladder:CSA_STAGE[22].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[22].fa ; work         ;
+;          |fulladder:CSA_STAGE[23].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[23].fa ; work         ;
+;          |fulladder:CSA_STAGE[24].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[24].fa ; work         ;
+;          |fulladder:CSA_STAGE[25].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[25].fa ; work         ;
+;          |fulladder:CSA_STAGE[26].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[26].fa ; work         ;
+;          |fulladder:CSA_STAGE[27].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[27].fa ; work         ;
+;          |fulladder:CSA_STAGE[28].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[28].fa ; work         ;
+;          |fulladder:CSA_STAGE[29].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[29].fa ; work         ;
+;          |fulladder:CSA_STAGE[2].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[2].fa  ; work         ;
+;          |fulladder:CSA_STAGE[30].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[30].fa ; work         ;
+;          |fulladder:CSA_STAGE[31].fa| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[31].fa ; work         ;
+;          |fulladder:CSA_STAGE[3].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[3].fa  ; work         ;
+;          |fulladder:CSA_STAGE[4].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[4].fa  ; work         ;
+;          |fulladder:CSA_STAGE[5].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[5].fa  ; work         ;
+;          |fulladder:CSA_STAGE[6].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[6].fa  ; work         ;
+;          |fulladder:CSA_STAGE[7].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[7].fa  ; work         ;
+;          |fulladder:CSA_STAGE[8].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[8].fa  ; work         ;
+;          |fulladder:CSA_STAGE[9].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa2|fulladder:CSA_STAGE[9].fa  ; work         ;
+;       |csa:csa3|                      ; 66 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3                            ; work         ;
+;          |fulladder:CSA_STAGE[0].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[0].fa  ; work         ;
+;          |fulladder:CSA_STAGE[10].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[10].fa ; work         ;
+;          |fulladder:CSA_STAGE[11].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[11].fa ; work         ;
+;          |fulladder:CSA_STAGE[12].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[12].fa ; work         ;
+;          |fulladder:CSA_STAGE[13].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[13].fa ; work         ;
+;          |fulladder:CSA_STAGE[14].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[14].fa ; work         ;
+;          |fulladder:CSA_STAGE[15].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[15].fa ; work         ;
+;          |fulladder:CSA_STAGE[16].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[16].fa ; work         ;
+;          |fulladder:CSA_STAGE[17].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[17].fa ; work         ;
+;          |fulladder:CSA_STAGE[18].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[18].fa ; work         ;
+;          |fulladder:CSA_STAGE[19].fa| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[19].fa ; work         ;
+;          |fulladder:CSA_STAGE[1].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[1].fa  ; work         ;
+;          |fulladder:CSA_STAGE[20].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[20].fa ; work         ;
+;          |fulladder:CSA_STAGE[21].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[21].fa ; work         ;
+;          |fulladder:CSA_STAGE[22].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[22].fa ; work         ;
+;          |fulladder:CSA_STAGE[23].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[23].fa ; work         ;
+;          |fulladder:CSA_STAGE[24].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[24].fa ; work         ;
+;          |fulladder:CSA_STAGE[25].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[25].fa ; work         ;
+;          |fulladder:CSA_STAGE[26].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[26].fa ; work         ;
+;          |fulladder:CSA_STAGE[27].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[27].fa ; work         ;
+;          |fulladder:CSA_STAGE[28].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[28].fa ; work         ;
+;          |fulladder:CSA_STAGE[29].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[29].fa ; work         ;
+;          |fulladder:CSA_STAGE[2].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[2].fa  ; work         ;
+;          |fulladder:CSA_STAGE[30].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[30].fa ; work         ;
+;          |fulladder:CSA_STAGE[31].fa| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[31].fa ; work         ;
+;          |fulladder:CSA_STAGE[3].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[3].fa  ; work         ;
+;          |fulladder:CSA_STAGE[4].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[4].fa  ; work         ;
+;          |fulladder:CSA_STAGE[5].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[5].fa  ; work         ;
+;          |fulladder:CSA_STAGE[6].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[6].fa  ; work         ;
+;          |fulladder:CSA_STAGE[7].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[7].fa  ; work         ;
+;          |fulladder:CSA_STAGE[8].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[8].fa  ; work         ;
+;          |fulladder:CSA_STAGE[9].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa3|fulladder:CSA_STAGE[9].fa  ; work         ;
+;       |csa:csa4|                      ; 64 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4                            ; work         ;
+;          |fulladder:CSA_STAGE[0].fa|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[0].fa  ; work         ;
+;          |fulladder:CSA_STAGE[10].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[10].fa ; work         ;
+;          |fulladder:CSA_STAGE[11].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[11].fa ; work         ;
+;          |fulladder:CSA_STAGE[12].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[12].fa ; work         ;
+;          |fulladder:CSA_STAGE[13].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[13].fa ; work         ;
+;          |fulladder:CSA_STAGE[14].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[14].fa ; work         ;
+;          |fulladder:CSA_STAGE[15].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[15].fa ; work         ;
+;          |fulladder:CSA_STAGE[16].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[16].fa ; work         ;
+;          |fulladder:CSA_STAGE[17].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[17].fa ; work         ;
+;          |fulladder:CSA_STAGE[18].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[18].fa ; work         ;
+;          |fulladder:CSA_STAGE[19].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[19].fa ; work         ;
+;          |fulladder:CSA_STAGE[1].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[1].fa  ; work         ;
+;          |fulladder:CSA_STAGE[20].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[20].fa ; work         ;
+;          |fulladder:CSA_STAGE[21].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[21].fa ; work         ;
+;          |fulladder:CSA_STAGE[22].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[22].fa ; work         ;
+;          |fulladder:CSA_STAGE[23].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[23].fa ; work         ;
+;          |fulladder:CSA_STAGE[24].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[24].fa ; work         ;
+;          |fulladder:CSA_STAGE[25].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[25].fa ; work         ;
+;          |fulladder:CSA_STAGE[26].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[26].fa ; work         ;
+;          |fulladder:CSA_STAGE[27].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[27].fa ; work         ;
+;          |fulladder:CSA_STAGE[28].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[28].fa ; work         ;
+;          |fulladder:CSA_STAGE[29].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[29].fa ; work         ;
+;          |fulladder:CSA_STAGE[2].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[2].fa  ; work         ;
+;          |fulladder:CSA_STAGE[30].fa| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[30].fa ; work         ;
+;          |fulladder:CSA_STAGE[31].fa| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[31].fa ; work         ;
+;          |fulladder:CSA_STAGE[3].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[3].fa  ; work         ;
+;          |fulladder:CSA_STAGE[4].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[4].fa  ; work         ;
+;          |fulladder:CSA_STAGE[5].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[5].fa  ; work         ;
+;          |fulladder:CSA_STAGE[6].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[6].fa  ; work         ;
+;          |fulladder:CSA_STAGE[7].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[7].fa  ; work         ;
+;          |fulladder:CSA_STAGE[8].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[8].fa  ; work         ;
+;          |fulladder:CSA_STAGE[9].fa|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|csa:csa4|fulladder:CSA_STAGE[9].fa  ; work         ;
+;       |maj:maj0|                      ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|maj:maj0                            ; work         ;
+;       |sum_0:sum0_0|                  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|sum_0:sum0_0                        ; work         ;
+;       |sum_1:sum1_1|                  ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |wrapper|sha_core:core|sum_1:sum1_1                        ; work         ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------+------------------------+
-; hashvalue[0]$latch                                  ; Equal19             ; yes                    ;
-; hashvalue[1]$latch                                  ; Equal19             ; yes                    ;
-; hashvalue[2]$latch                                  ; Equal19             ; yes                    ;
-; hashvalue[3]$latch                                  ; Equal19             ; yes                    ;
-; hashvalue[4]$latch                                  ; Equal19             ; yes                    ;
-; hashvalue[5]$latch                                  ; Equal19             ; yes                    ;
-; hashvalue[6]$latch                                  ; Equal19             ; yes                    ;
-; hashvalue[7]$latch                                  ; Equal19             ; yes                    ;
-; hashvalue[8]$latch                                  ; Equal19             ; yes                    ;
-; hashvalue[9]$latch                                  ; Equal19             ; yes                    ;
-; hashvalue[10]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[11]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[12]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[13]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[14]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[15]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[16]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[17]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[18]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[19]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[20]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[21]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[22]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[23]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[24]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[25]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[26]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[27]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[28]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[29]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[30]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[31]$latch                                 ; Equal19             ; yes                    ;
-; hashvalue[128]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[129]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[130]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[131]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[132]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[133]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[134]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[135]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[136]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[137]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[138]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[139]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[140]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[141]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[142]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[143]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[144]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[145]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[146]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[147]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[148]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[149]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[150]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[151]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[152]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[153]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[154]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[155]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[156]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[157]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[158]$latch                                ; Equal19             ; yes                    ;
-; hashvalue[159]$latch                                ; Equal19             ; yes                    ;
-; Number of user-specified and inferred latches = 64  ;                     ;                        ;
-+-----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +--------------------------------------------------------------------------------+
@@ -461,7 +394,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------------+----------------------------------------+
 ; Register name                         ; Reason for Removal                     ;
 +---------------------------------------+----------------------------------------+
-; reg_ac[0]                             ; Stuck at GND due to stuck port data_in ;
+; sha_core:core|reg_ac[0]               ; Stuck at GND due to stuck port data_in ;
 ; Total Number of Removed Registers = 1 ;                                        ;
 +---------------------------------------+----------------------------------------+
 
@@ -471,30 +404,31 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 871   ;
+; Total registers                              ; 1736  ;
 ; Number of registers using Synchronous Clear  ; 80    ;
 ; Number of registers using Synchronous Load   ; 79    ;
-; Number of registers using Asynchronous Clear ; 871   ;
+; Number of registers using Asynchronous Clear ; 1736  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 799   ;
+; Number of registers using Clock Enable       ; 1663  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 64 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; Yes        ; |sha_core|reg_in[255]      ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |sha_core|counter_reg[6]   ;
-; 3:1                ; 512 bits  ; 1024 LEs      ; 512 LEs              ; 512 LEs                ; Yes        ; |sha_core|buffer[146]      ;
-; 34:1               ; 32 bits   ; 704 LEs       ; 352 LEs              ; 352 LEs                ; No         ; |sha_core|w_i[30]          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; 3:1                ; 512 bits  ; 1024 LEs      ; 512 LEs              ; 512 LEs                ; Yes        ; |wrapper|sha_core:core|buffer[263]    ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; Yes        ; |wrapper|sha_core:core|reg_in[157]    ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |wrapper|sha_core:core|counter_reg[6] ;
+; 32:1               ; 31 bits   ; 651 LEs       ; 496 LEs              ; 155 LEs                ; Yes        ; |wrapper|oData[16]~reg0               ;
+; 34:1               ; 32 bits   ; 704 LEs       ; 352 LEs              ; 352 LEs                ; No         ; |wrapper|sha_core:core|w_i[30]        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "csa:csa0|fulladder:CSA_STAGE[31].fa"                                                 ;
+; Port Connectivity Checks: "sha_core:core|csa:csa0|fulladder:CSA_STAGE[31].fa"                                   ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port  ; Type   ; Severity ; Details                                                                             ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
@@ -502,60 +436,44 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------+
-; Port Connectivity Checks: "ch:ch0"          ;
-+-----------+-------+----------+--------------+
-; Port      ; Type  ; Severity ; Details      ;
-+-----------+-------+----------+--------------+
-; e[19..17] ; Input ; Info     ; Stuck at VCC ;
-; e[6..0]   ; Input ; Info     ; Stuck at VCC ;
-; e[27..25] ; Input ; Info     ; Stuck at GND ;
-; e[23..20] ; Input ; Info     ; Stuck at GND ;
-; e[16..15] ; Input ; Info     ; Stuck at GND ;
-; e[11..10] ; Input ; Info     ; Stuck at GND ;
-; e[8..7]   ; Input ; Info     ; Stuck at GND ;
-; e[31]     ; Input ; Info     ; Stuck at GND ;
-; e[30]     ; Input ; Info     ; Stuck at VCC ;
-; e[29]     ; Input ; Info     ; Stuck at GND ;
-; e[28]     ; Input ; Info     ; Stuck at VCC ;
-; e[24]     ; Input ; Info     ; Stuck at VCC ;
-; e[14]     ; Input ; Info     ; Stuck at VCC ;
-; e[13]     ; Input ; Info     ; Stuck at GND ;
-; e[12]     ; Input ; Info     ; Stuck at VCC ;
-; e[9]      ; Input ; Info     ; Stuck at VCC ;
-; f[28..27] ; Input ; Info     ; Stuck at VCC ;
-; f[25..24] ; Input ; Info     ; Stuck at VCC ;
-; f[14..13] ; Input ; Info     ; Stuck at VCC ;
-; f[3..2]   ; Input ; Info     ; Stuck at VCC ;
-; f[30..29] ; Input ; Info     ; Stuck at GND ;
-; f[23..19] ; Input ; Info     ; Stuck at GND ;
-; f[10..8]  ; Input ; Info     ; Stuck at GND ;
-; f[6..4]   ; Input ; Info     ; Stuck at GND ;
-; f[1..0]   ; Input ; Info     ; Stuck at GND ;
-; f[31]     ; Input ; Info     ; Stuck at VCC ;
-; f[26]     ; Input ; Info     ; Stuck at GND ;
-; f[18]     ; Input ; Info     ; Stuck at VCC ;
-; f[17]     ; Input ; Info     ; Stuck at GND ;
-; f[16]     ; Input ; Info     ; Stuck at VCC ;
-; f[15]     ; Input ; Info     ; Stuck at GND ;
-; f[12]     ; Input ; Info     ; Stuck at GND ;
-; f[11]     ; Input ; Info     ; Stuck at VCC ;
-; f[7]      ; Input ; Info     ; Stuck at VCC ;
-; g[28..23] ; Input ; Info     ; Stuck at VCC ;
-; g[17..14] ; Input ; Info     ; Stuck at VCC ;
-; g[12..11] ; Input ; Info     ; Stuck at VCC ;
-; g[8..7]   ; Input ; Info     ; Stuck at VCC ;
-; g[1..0]   ; Input ; Info     ; Stuck at VCC ;
-; g[31..29] ; Input ; Info     ; Stuck at GND ;
-; g[22..18] ; Input ; Info     ; Stuck at GND ;
-; g[10..9]  ; Input ; Info     ; Stuck at GND ;
-; g[13]     ; Input ; Info     ; Stuck at GND ;
-; g[6]      ; Input ; Info     ; Stuck at GND ;
-; g[5]      ; Input ; Info     ; Stuck at VCC ;
-; g[4]      ; Input ; Info     ; Stuck at GND ;
-; g[3]      ; Input ; Info     ; Stuck at VCC ;
-; g[2]      ; Input ; Info     ; Stuck at GND ;
-+-----------+-------+----------+--------------+
++--------------------------------------------------+
+; Port Connectivity Checks: "sha_core:core|ch:ch0" ;
++-----------+-------+----------+-------------------+
+; Port      ; Type  ; Severity ; Details           ;
++-----------+-------+----------+-------------------+
+; f[28..27] ; Input ; Info     ; Stuck at VCC      ;
+; f[25..24] ; Input ; Info     ; Stuck at VCC      ;
+; f[14..13] ; Input ; Info     ; Stuck at VCC      ;
+; f[3..2]   ; Input ; Info     ; Stuck at VCC      ;
+; f[30..29] ; Input ; Info     ; Stuck at GND      ;
+; f[23..19] ; Input ; Info     ; Stuck at GND      ;
+; f[10..8]  ; Input ; Info     ; Stuck at GND      ;
+; f[6..4]   ; Input ; Info     ; Stuck at GND      ;
+; f[1..0]   ; Input ; Info     ; Stuck at GND      ;
+; f[31]     ; Input ; Info     ; Stuck at VCC      ;
+; f[26]     ; Input ; Info     ; Stuck at GND      ;
+; f[18]     ; Input ; Info     ; Stuck at VCC      ;
+; f[17]     ; Input ; Info     ; Stuck at GND      ;
+; f[16]     ; Input ; Info     ; Stuck at VCC      ;
+; f[15]     ; Input ; Info     ; Stuck at GND      ;
+; f[12]     ; Input ; Info     ; Stuck at GND      ;
+; f[11]     ; Input ; Info     ; Stuck at VCC      ;
+; f[7]      ; Input ; Info     ; Stuck at VCC      ;
+; g[28..23] ; Input ; Info     ; Stuck at VCC      ;
+; g[17..14] ; Input ; Info     ; Stuck at VCC      ;
+; g[12..11] ; Input ; Info     ; Stuck at VCC      ;
+; g[8..7]   ; Input ; Info     ; Stuck at VCC      ;
+; g[1..0]   ; Input ; Info     ; Stuck at VCC      ;
+; g[31..29] ; Input ; Info     ; Stuck at GND      ;
+; g[22..18] ; Input ; Info     ; Stuck at GND      ;
+; g[10..9]  ; Input ; Info     ; Stuck at GND      ;
+; g[13]     ; Input ; Info     ; Stuck at GND      ;
+; g[6]      ; Input ; Info     ; Stuck at GND      ;
+; g[5]      ; Input ; Info     ; Stuck at VCC      ;
+; g[4]      ; Input ; Info     ; Stuck at GND      ;
+; g[3]      ; Input ; Info     ; Stuck at VCC      ;
+; g[2]      ; Input ; Info     ; Stuck at GND      ;
++-----------+-------+----------+-------------------+
 
 
 +-------------------------------+
@@ -563,7 +481,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -573,235 +491,48 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Apr 15 01:51:31 2025
+    Info: Processing started: Sat Apr 19 20:49:24 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sha256 -c sha256
-Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 1 design units, including 1 entities, in source file sha256.v
-    Info (12023): Found entity 1: sha256
-Info (12021): Found 2 design units, including 2 entities, in source file csa.v
-    Info (12023): Found entity 1: csa
-    Info (12023): Found entity 2: fulladder
-Info (12021): Found 1 design units, including 1 entities, in source file sha_core.v
-    Info (12023): Found entity 1: sha_core
+Info (11104): Parallel Compilation has detected 16 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 8 of the 8 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file wrapper.v
+    Info (12023): Found entity 1: wrapper
+Info (12021): Found 1 design units, including 1 entities, in source file test_wrap.v
+    Info (12023): Found entity 1: test_wrap
 Info (12021): Found 1 design units, including 1 entities, in source file test.v
     Info (12023): Found entity 1: test
 Info (12021): Found 1 design units, including 1 entities, in source file sum_1.v
     Info (12023): Found entity 1: sum_1
 Info (12021): Found 1 design units, including 1 entities, in source file sum_0.v
     Info (12023): Found entity 1: sum_0
-Info (12021): Found 1 design units, including 1 entities, in source file ch.v
-    Info (12023): Found entity 1: ch
+Info (12021): Found 1 design units, including 1 entities, in source file sha256.v
+    Info (12023): Found entity 1: sha256
+Info (12021): Found 1 design units, including 1 entities, in source file sha_core.v
+    Info (12023): Found entity 1: sha_core
 Info (12021): Found 1 design units, including 1 entities, in source file maj.v
     Info (12023): Found entity 1: maj
-Info (12127): Elaborating entity "sha_core" for the top level hierarchy
-Info (10041): Inferred latch for "hashvalue[0]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[1]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[2]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[3]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[4]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[5]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[6]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[7]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[8]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[9]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[10]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[11]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[12]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[13]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[14]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[15]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[16]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[17]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[18]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[19]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[20]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[21]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[22]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[23]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[24]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[25]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[26]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[27]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[28]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[29]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[30]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[31]" at sha_core.v(247)
-Info (10041): Inferred latch for "hashvalue[128]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[129]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[130]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[131]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[132]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[133]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[134]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[135]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[136]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[137]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[138]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[139]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[140]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[141]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[142]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[143]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[144]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[145]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[146]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[147]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[148]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[149]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[150]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[151]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[152]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[153]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[154]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[155]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[156]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[157]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[158]" at sha_core.v(245)
-Info (10041): Inferred latch for "hashvalue[159]" at sha_core.v(245)
-Info (12128): Elaborating entity "ch" for hierarchy "ch:ch0"
-Info (12128): Elaborating entity "sum_1" for hierarchy "sum_1:s1_0"
-Info (12128): Elaborating entity "sum_0" for hierarchy "sum_0:sum0_0"
-Info (12128): Elaborating entity "maj" for hierarchy "maj:maj0"
-Info (12128): Elaborating entity "csa" for hierarchy "csa:csa0"
-Info (12128): Elaborating entity "fulladder" for hierarchy "csa:csa0|fulladder:CSA_STAGE[0].fa"
-Warning (13012): Latch hashvalue[0]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[1]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[2]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[3]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[4]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[5]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[6]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[7]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[8]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[9]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[10]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[11]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[12]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[13]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[14]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[15]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[16]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[17]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[18]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[19]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[20]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[21]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[22]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[23]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[24]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[25]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[26]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[27]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[28]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[29]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[30]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[31]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[128]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[129]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[130]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[131]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[132]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[133]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[134]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[135]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[136]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[137]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[138]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[139]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[140]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[141]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[142]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[143]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[144]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[145]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[146]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[147]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[148]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[149]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[150]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[151]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[152]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[153]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[154]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[155]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[156]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[157]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[158]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
-Warning (13012): Latch hashvalue[159]$latch has unsafe behavior
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal counter_reg[6]
+Info (12021): Found 2 design units, including 2 entities, in source file csa.v
+    Info (12023): Found entity 1: csa
+    Info (12023): Found entity 2: fulladder
+Info (12021): Found 1 design units, including 1 entities, in source file ch.v
+    Info (12023): Found entity 1: ch
+Info (12127): Elaborating entity "wrapper" for the top level hierarchy
+Info (12128): Elaborating entity "sha_core" for hierarchy "sha_core:core"
+Info (12128): Elaborating entity "ch" for hierarchy "sha_core:core|ch:ch0"
+Info (12128): Elaborating entity "sum_1" for hierarchy "sha_core:core|sum_1:s1_0"
+Info (12128): Elaborating entity "sum_0" for hierarchy "sha_core:core|sum_0:sum0_0"
+Info (12128): Elaborating entity "maj" for hierarchy "sha_core:core|maj:maj0"
+Info (12128): Elaborating entity "csa" for hierarchy "sha_core:core|csa:csa0"
+Info (12128): Elaborating entity "fulladder" for hierarchy "sha_core:core|csa:csa0|fulladder:CSA_STAGE[0].fa"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3335 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 515 input pins
-    Info (21059): Implemented 257 output pins
-    Info (21061): Implemented 2563 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 129 warnings
-    Info: Peak virtual memory: 4625 megabytes
-    Info: Processing ended: Tue Apr 15 01:51:37 2025
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:05
+Info (21057): Implemented 3504 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 42 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 3430 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4633 megabytes
+    Info: Processing ended: Sat Apr 19 20:49:31 2025
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
 
 

@@ -8,6 +8,7 @@ module test();
 	reg [511:0] data_in;
 	wire [255:0] hashvalue;
 	wire valid;
+	//wire [6:0] counter;
 
 	// SHA Core wrapper: Bạn cần wrapper xử lý buffer và start từ 4 lần ghi
 	sha_core dut (
@@ -17,6 +18,7 @@ module test();
 	.message			(data_in),
 	.hashvalue		(hashvalue),
 	.valid			(valid)
+	//.out_count		(counter)
 	);
 
 	// Clock generator: 10ns period
@@ -48,7 +50,7 @@ module test();
 		wait (valid == 1);
 		$display("SHA-256 Hash Output: %h", hashvalue);
 
-		#10;
+		#100;
 		$finish;
 	end
 endmodule

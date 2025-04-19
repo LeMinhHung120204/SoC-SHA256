@@ -1,14 +1,15 @@
 module sha_core(
 	input clk, clr, start,
 	input [511:0] message,
-	//input [127:0] data_in,
 	output [255:0] hashvalue,
-	output reg valid
+	output valid
+	//output [6:0] out_count
 );
 	reg [6:0]	counter_reg;
 	reg [31:0]	K, reg_ac;
 	reg [319:0]	reg_in;
 	reg [511:0]	buffer;
+	reg [31:0]  reg_d, reg_g;
 	
 	wire [6:0]		counter_w_reg;
 	wire [31:0]		S0, N0, M1, M2, tmp0, tmp1, tmp2, tmp3, tmp4, tmp5;
@@ -19,6 +20,9 @@ module sha_core(
 	wire [31:0]		com0, com1, si, ni;
 	wire [511:0]	block_out_wire;
 	
+	
+	//assign out_count = counter_reg;
+	assign valid = (counter_reg == 66) ? 1'b1 : 1'b0;
 	// ===============================================================================================================
 	
 	assign w0	= buffer[511:480];
@@ -144,20 +148,22 @@ module sha_core(
 	
 	always @(posedge clk or negedge clr) begin
 		if (~clr) begin
-			counter_reg	<= 7'd0;
-			valid			<= 1'b0;
+			counter_reg	<= 7'd0;	
+			reg_d <= 32'd0;
+			reg_g <= 32'd0;
 		end
 		else begin
-			if(counter_reg == 65) begin
-				valid <= 1'b1;
-			end
 			if (counter_reg < 66) begin
 				if(counter_reg == 0) begin
-					valid			<= 1'b0;
 					counter_reg	<= (start == 1) ? 1'b1 : 1'b0;
 				end
-				else 
+				else begin 
+					if (counter_reg == 65) begin
+						reg_d	<= (h3 + reg_in[255:224]);	// d
+						reg_g	<= (h7 + reg_in[159:128]);	
+					end	
 					counter_reg <= counter_reg + 1'b1;
+				end
 			end
 			else
 				counter_reg	<= 7'd0;
@@ -242,16 +248,19 @@ module sha_core(
 	
 	// ======================================================================
 	// debug
-	assign hashvalue[159:128] = (counter_reg < 65)  ? 32'd0 :
-										(counter_reg == 65) ? (h3 + reg_in[255:224]) : hashvalue[159:128];     // d
-	assign hashvalue[31:0] = (counter_reg < 65)  ? 32'd0 :
-									(counter_reg == 65) ? (h7 + reg_in[159:128]) : hashvalue[31:0];        // g
-	assign hashvalue[255:224] = (counter_reg == 66) ? h0 + at : 0;                   // a
-	assign hashvalue[223:192] = (counter_reg == 66) ? h1 + reg_in[287:256] : 0;     // b
-	assign hashvalue[191:160] = (counter_reg == 66) ? h2 + reg_in[255:224] : 0;     // c
-	assign hashvalue[127:96]  = (counter_reg == 66) ? h4 + reg_in[223:192] : 0;     // e
-	assign hashvalue[95:64]   = (counter_reg == 66) ? h5 + reg_in[191:160] : 0;     // f
-	assign hashvalue[63:32]   = (counter_reg == 66) ? h6 + reg_in[159:128] : 0;     // g
+	/*assign hashvalue[159:128]	= (counter_reg < 65)  ? 32'd0 :
+											(counter_reg == 65) ? (h3 + reg_in[255:224]) : hashvalue[159:128];     // d
+	assign hashvalue[31:0] 		= (counter_reg < 65)  ? 32'd0 :
+											(counter_reg == 65) ? (h7 + reg_in[159:128]) : hashvalue[31:0];        // g*/
+											
+	assign hashvalue[159:128]	= (counter_reg < 66)  ? 32'd0 : reg_d;
+	assign hashvalue[31:0] 		= (counter_reg < 66)  ? 32'd0 : reg_g;
+	assign hashvalue[255:224]	= (counter_reg == 66) ? h0 + at : 0;                   // a
+	assign hashvalue[223:192]	= (counter_reg == 66) ? h1 + reg_in[287:256] : 0;     // b
+	assign hashvalue[191:160]	= (counter_reg == 66) ? h2 + reg_in[255:224] : 0;     // c
+	assign hashvalue[127:96]	= (counter_reg == 66) ? h4 + reg_in[223:192] : 0;     // e
+	assign hashvalue[95:64] 	= (counter_reg == 66) ? h5 + reg_in[191:160] : 0;     // f
+	assign hashvalue[63:32]		= (counter_reg == 66) ? h6 + reg_in[159:128] : 0;     // g
 
 
 	// ======================================================================
