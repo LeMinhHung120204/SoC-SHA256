@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sha256
-Tue Apr 22 13:40:23 2025
+Tue Apr 22 15:25:31 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -170,13 +170,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 22 13:40:23 2025           ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 22 15:25:31 2025           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; sha256                                          ;
 ; Top-level Entity Name              ; sha256                                          ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 5,172                                           ;
-;     Total combinational functions  ; 4,447                                           ;
+; Total logic elements               ; 5,174                                           ;
+;     Total combinational functions  ; 4,449                                           ;
 ;     Dedicated logic registers      ; 2,666                                           ;
 ; Total registers                    ; 2666                                            ;
 ; Total pins                         ; 2                                               ;
@@ -374,16 +374,16 @@ applicable agreement for further details.
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Estimated Total logic elements              ; 5,172    ;
+; Estimated Total logic elements              ; 5,174    ;
 ;                                             ;          ;
-; Total combinational functions               ; 4447     ;
+; Total combinational functions               ; 4449     ;
 ; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 1960     ;
+;     -- 4 input functions                    ; 1961     ;
 ;     -- 3 input functions                    ; 1795     ;
-;     -- <=2 input functions                  ; 692      ;
+;     -- <=2 input functions                  ; 693      ;
 ;                                             ;          ;
 ; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 3809     ;
+;     -- normal mode                          ; 3811     ;
 ;     -- arithmetic mode                      ; 638      ;
 ;                                             ;          ;
 ; Total registers                             ; 2666     ;
@@ -395,7 +395,7 @@ applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0        ;
 ; Maximum fan-out node                        ; CLOCK_50 ;
 ; Maximum fan-out                             ; 2659     ;
-; Total fan-out                               ; 27392    ;
+; Total fan-out                               ; 27398    ;
 ; Average fan-out                             ; 3.75     ;
 +---------------------------------------------+----------+
 
@@ -405,9 +405,9 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                                   ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |sha256                                                                                                         ; 4447 (1)          ; 2666 (0)     ; 273408      ; 0            ; 0       ; 0         ; 2    ; 0            ; |sha256                                                                                                                                                                                                                                                                                                                                                               ; work         ;
-;    |sld_hub:auto_hub|                                                                                           ; 161 (1)           ; 97 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha256|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                                              ; work         ;
-;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                            ; 160 (119)         ; 97 (69)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha256|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                                                 ; work         ;
+; |sha256                                                                                                         ; 4449 (1)          ; 2666 (0)     ; 273408      ; 0            ; 0       ; 0         ; 2    ; 0            ; |sha256                                                                                                                                                                                                                                                                                                                                                               ; work         ;
+;    |sld_hub:auto_hub|                                                                                           ; 163 (1)           ; 97 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha256|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                                              ; work         ;
+;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                            ; 162 (121)         ; 97 (69)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha256|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                                                 ; work         ;
 ;          |sld_rom_sr:hub_info_reg|                                                                              ; 24 (24)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha256|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                                                                                                                                                                                                                         ; work         ;
 ;          |sld_shadow_jsm:shadow_jsm|                                                                            ; 17 (17)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha256|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_shadow_jsm:shadow_jsm                                                                                                                                                                                                                                                                       ; work         ;
 ;    |system:u0|                                                                                                  ; 4285 (0)          ; 2569 (0)     ; 273408      ; 0            ; 0       ; 0         ; 0    ; 0            ; |sha256|system:u0                                                                                                                                                                                                                                                                                                                                                     ; system       ;
@@ -1136,16 +1136,6 @@ Encoding Type:  One-Hot
 ; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |sha256|system:u0|system_nios2_qsys_0:nios2_qsys_0|W_rf_wr_data[31]                                                                                                                                                                                                                                               ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |sha256|system:u0|system_nios2_qsys_0:nios2_qsys_0|D_dst_regnum[3]                                                                                                                                                                                                                                                ;
 ; 34:1               ; 32 bits   ; 704 LEs       ; 352 LEs              ; 352 LEs                ; No         ; |sha256|system:u0|wrapper:wrap_0|sha_core:core|w_i[25]                                                                                                                                                                                                                                                            ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |sha256|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[1]                                                                                                                                                                                                                        ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |sha256|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|mixer_addr_reg[0]                                                                                                                                                                                                                           ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |sha256|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irf_reg[2][0]                                                                                                                                                                                                                               ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |sha256|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irf_reg[1][0]                                                                                                                                                                                                                               ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |sha256|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|word_counter[4]                                                                                                                                                                                                     ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |sha256|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|shadow_irf_reg[2][1]                                                                                                                                                                                                                        ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |sha256|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|shadow_irf_reg[1][3]                                                                                                                                                                                                                        ;
-; 8:1                ; 5 bits    ; 25 LEs        ; 10 LEs               ; 15 LEs                 ; Yes        ; |sha256|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irsr_reg[3]                                                                                                                                                                                                                                 ;
-; 34:1               ; 4 bits    ; 88 LEs        ; 56 LEs               ; 32 LEs                 ; Yes        ; |sha256|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[1]                                                                                                                                                                                                                          ;
-; 28:1               ; 4 bits    ; 72 LEs        ; 48 LEs               ; 24 LEs                 ; Yes        ; |sha256|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|WORD_SR[0]                                                                                                                                                                                                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -3403,14 +3393,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------+--------+----------+-------------------------------------+
 
 
-+---------------------------------+
-; Elapsed Time Per Partition      ;
-+------------------+--------------+
-; Partition Name   ; Elapsed Time ;
-+------------------+--------------+
-; Top              ; 00:00:08     ;
-; sld_hub:auto_hub ; 00:00:00     ;
-+------------------+--------------+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:09     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -3419,7 +3408,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Apr 22 13:40:10 2025
+    Info: Processing started: Tue Apr 22 15:25:15 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sha256 -c sha256
 Info (11104): Parallel Compilation has detected 16 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 8 of the 8 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file system/synthesis/system.v
@@ -3754,23 +3743,19 @@ Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (17049): 11 registers lost all their fanouts during netlist optimizations.
-Info (13000): Registers with preset signals will power-up high
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "sld_hub:auto_hub|receive[0][0]" is stuck at GND
 Info (144001): Generated suppressed messages file C:/Hung/Year3/HK2/CE433/SoC-SHA256/rtl/output_files/sha256.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 5445 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5447 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 5262 logic cells
+    Info (21061): Implemented 5264 logic cells
     Info (21064): Implemented 176 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4733 megabytes
-    Info: Processing ended: Tue Apr 22 13:40:23 2025
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:13
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4735 megabytes
+    Info: Processing ended: Tue Apr 22 15:25:31 2025
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:15
 
 
 +------------------------------------------+

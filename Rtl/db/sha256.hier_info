@@ -1,6 +1,6 @@
 |sha256
 CLOCK_50 => CLOCK_50.IN1
-KEY[0] => KEY[0].IN1
+SW[0] => SW[0].IN1
 
 
 |sha256|system:u0
