@@ -1,0 +1,58 @@
+/*
+ * source.c
+ *
+ *  Created on: Apr 22, 2025
+ *      Author: MinzHung
+ */
+#include <stdio.h>
+#include <stdint.h>
+#include <inttypes.h>
+#include "system.h"
+#include "io.h"
+
+#define SHA_BASE WRAPPER1_0_BASE
+
+int main() {
+    uint32_t message[16] = {
+    	0x00000018, 0x00000000, 0x00000000, 0x00000000,
+        0x00000000, 0x00000000, 0x00000000, 0x00000000,
+        0x00000000, 0x00000000, 0x00000000, 0x00000000,
+        0x00000000, 0x00000000, 0x00000000, 0x61626380
+    };
+    int i;
+    for (i = 0; i < 16; i++) {
+        IOWR(SHA_BASE, i, message[i]);
+    }
+    IOWR(SHA_BASE, 24, 1);
+
+    printf("Input at Avalon addresses:\n");
+
+    while ((IORD(SHA_BASE, 25) & 0x1) == 0);
+
+    for (i = 0; i < 16; i++) {
+		uint32_t val = IORD(SHA_BASE, i);
+		printf("Address %3d (0x%08X): 0x%08" PRIx32 "\n", i, SHA_BASE + i * 4, val);
+	}
+
+	uint32_t ctrl = IORD(SHA_BASE, 25);
+	printf("Control (address 25 - 0x%08X): 0x%08" PRIx32 "\n", SHA_BASE + 25 * 4, ctrl);
+
+    uint32_t hash[8];
+    for (i = 0; i < 8; i++) {
+        hash[i] = IORD(SHA_BASE, 16 + i);
+    }
+
+    printf("SHA-256 hash:\n");
+    for (i = 0; i < 8; i++) {
+        printf("Address %2d (0x%08X): 0x%08" PRIx32 "\n",
+			   16 + i,                     // offset (địa chỉ logic)
+			   SHA_BASE + (16 + i) * 4,    // địa chỉ thực
+			   hash[i]);                   // giá trị tại địa chỉ đó
+    }
+    printf("\n");
+
+    return 0;
+}
+
+
+
